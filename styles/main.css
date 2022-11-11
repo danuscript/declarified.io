@@ -1,15 +1,90 @@
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #fcf5d8;
     color: #1b365c;
+    background-color: #9ce0ee;
     margin: 0;
-    padding: 0;
+}
+
+body a:link {
+    color: #1b365c;
+}
+
+body a:visited {
+    color: #1b365c;
+}
+
+.nav-bar {
+    background-color: #9ce0ee;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 40px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+}
+
+.nav-bar a:link {
+    opacity: 0.5;
+    text-decoration: none;
+}
+
+.nav-bar a:hover {
+    opacity: 1;
+}
+
+.nav-current {
+    font-weight: 500;
+}
+
+#logo {
+    font-weight: 900;
+    text-decoration: none;
+}
+
+#logo a:link {
+    opacity: 1;
+}
+
+.page-content {
+    background-color: #fcf5d8;
+    display: flex;
+    justify-content: center;
+}
+
+.main-column {
+    padding-top: 50px;
+    margin-left: 40px;
+    margin-right: 40px;
+    max-width: 800px;
+    padding-bottom: 20px;
+}
+
+.side-columns {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50px;
+    align-self: flex-start;
+    padding-top: 25px;
+    min-width: 150px;
+}
+
+.contents-column {
+    padding-left: 20px;
+}
+
+.page-column {
+    padding-top: 25px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50px;
+    align-self: flex-start;
+    min-width: 150px;
+
 }
 
 h1 {
-    margin-left: 40px;
     font-weight: 700;
 }
 
@@ -20,24 +95,6 @@ h2 {
 .main-body-text {
     padding: 20px;
     background-color: #fcd2b8;
-    margin-left: 40px;
-    margin-right: 40px;
     border-radius: 25px;
-    max-width: 800px;
 }
 
-.header {
-    background-color: #9ce0ee;
-    padding: 10px;
-    text-align: center;
-}
-
-#logo {
-    font-weight: 900;
-    text-decoration: none;
-}
-
-#logo a:link {
-    color: #1b365c;
-    text-decoration: none;
-}

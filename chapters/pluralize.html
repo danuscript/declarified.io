@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:regular,bold,black,medium">
     <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/highlight.js styles/default.min.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <title>declarified.io | pluralize</title>
 </head>
@@ -89,29 +90,29 @@
                 <p class="side-column-text">Who is this guide for?</p>
             </div>
             <div class="side-column-labels">Sections:</div>
-                <p class="side-column-text">Introduction</p>
-                <p class="side-column-text">Prerequisites</p>
-                <p class="side-column-text">pluralize</p>
-                <p class="side-column-text">Challenge Overview</p>
-                <p class="side-column-text">Explanation</p>
-                <p class="side-column-text">Code walkthrough</p>
-                <p class="side-column-text">map</p>
-                <p class="side-column-text">forEach</p>
-                <p class="side-column-text">filterArray</p>
-                <p class="side-column-text">eitherFilter</p>
-                <p class="side-column-text">eitherCallback</p>
-                <p class="side-column-text">reduce</p>
-                <p class="side-column-text">intersection</p>
-                <p class="side-column-text">union</p>
-                <p class="side-column-text">objOfMatches</p>
-                <p class="side-column-text">arrToObj</p>
-                <p class="side-column-text">multiMap</p>
-                <p class="side-column-text">majority</p>
-                <p class="side-column-text">prioritize</p>
-                <p class="side-column-text">countBy</p>
-                <p class="side-column-text">groupBy</p>
-                <p class="side-column-text">goodKeys</p>
-                <p class="side-column-text">Conclusion</p>
+            <p class="side-column-text">Introduction</p>
+            <p class="side-column-text">Prerequisites</p>
+            <p class="side-column-text">pluralize</p>
+            <p class="side-column-text">Challenge Overview</p>
+            <p class="side-column-text">Explanation</p>
+            <p class="side-column-text">Code walkthrough</p>
+            <p class="side-column-text">map</p>
+            <p class="side-column-text">forEach</p>
+            <p class="side-column-text">filterArray</p>
+            <p class="side-column-text">eitherFilter</p>
+            <p class="side-column-text">eitherCallback</p>
+            <p class="side-column-text">reduce</p>
+            <p class="side-column-text">intersection</p>
+            <p class="side-column-text">union</p>
+            <p class="side-column-text">objOfMatches</p>
+            <p class="side-column-text">arrToObj</p>
+            <p class="side-column-text">multiMap</p>
+            <p class="side-column-text">majority</p>
+            <p class="side-column-text">prioritize</p>
+            <p class="side-column-text">countBy</p>
+            <p class="side-column-text">groupBy</p>
+            <p class="side-column-text">goodKeys</p>
+            <p class="side-column-text">Conclusion</p>
         </div>
     </div>
 
@@ -151,95 +152,68 @@
             <h1>pluralize</h1>
             <div class="main-body-text">
                 <h2>Challenge Overview</h2>
-                A <strong>callback</strong> is a function that gets passed into another function as an argument,
-                and then invoked inside that outer function’s body. A <strong>higher-order function</strong> either
-                returns a function, or accepts a callback function as an argument. These two concepts
-                seem relatively simple on the surface, but they can be the source of a lot of confusion
-                for those who are new to programming. This guide is designed to cut through that confusion,
-                by providing clear explanations and easy-to-follow JavaScript code walkthroughs for each
-                problem in CSX’s Callbacks & Higher Order Functions module.
+                The first challenge in the Callbacks and Higher Order functions module is called pluralize, and the
+                prompt is as follows:
+                <br>
+                <blockquote>
+                    Create a function <code>pluralize</code> that takes an array of strings as input and returns a new
+                    array with an
+                    "s"
+                    added to the end of each string in the input array. For example, if the string "carrot" is in the
+                    input
+                    array, it should become the string "carrots" in the output array.
+                    <br><br>
+                    The body of the <code>pluralize</code> function should employ a single for loop that pluralizes each
+                    string in
+                    the
+                    input array.<br><br>
+                    Example:<br>
+                    <strong>Input</strong><br>
+                    <code>array = ["dog", "cat", "tree frog"]</code><br>
+                    <strong>Output</strong><br>
+                    <code>map(array) = ["dogs", "cats", "tree frogs"]</code>
+                    <br>
+                </blockquote>
+                This challenge’s prompt is very straightforward and we won’t be using any higher order functions to
+                solve it. While it may seem basic, it’s still an important starting point because we’ll be applying the
+                process of deriving a solution to all of the remaining challenges as well. Let’s start by breaking down
+                some of the language used in this prompt so we can see what clues it gives us in terms of how to write a
+                function that solves it.
                 <br><br>
-                CSX is an online platform and community where people learn the basics of JavaScript,
-                usually to prepare for entrance into the Codesmith coding bootcamp. Many people in this
-                community have shared that while they’ve understood the first few sections of CSX
-                material, the transition into the Callbacks and Higher Order Functions module has left
-                them feeling “discouraged”, “struggling”, “confused”, or “frustrated”. The difficulty spike is
-                very real, but these concepts can be broken down into just a few simple patterns. This
-                guide is not affiliated with Codesmith or CSX; it’s just here to show you that you can get
-                through these challenges with full understanding!
-                <br><br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Tristique magna sit amet purus. Nunc mi ipsum faucibus vitae aliquet. Facilisi
-                nullam
-                vehicula ipsum a arcu cursus vitae congue mauris. Morbi tristique senectus et netus et malesuada fames.
-                Eu
-                lobortis elementum nibh tellus. Eros in cursus turpis massa tincidunt. Curabitur gravida arcu ac tortor
-                dignissim convallis aenean et. Sed viverra ipsum nunc aliquet bibendum. Commodo quis imperdiet massa
-                tincidunt. Et malesuada fames ac turpis. In ornare quam viverra orci sagittis eu volutpat. Ipsum dolor
-                sit
-                amet consectetur adipiscing elit duis. Tortor consequat id porta nibh venenatis cras sed felis. Viverra
-                nibh
-                cras pulvinar mattis nunc sed blandit libero volutpat. Dolor magna eget est lorem ipsum. Sapien
-                pellentesque
-                habitant morbi tristique senectus et netus et. Gravida neque convallis a cras semper auctor neque.
-                Integer
-                feugiat scelerisque varius morbi enim.
-                <br><br>
-                A scelerisque purus semper eget duis at tellus. Condimentum mattis pellentesque id nibh tortor id
-                aliquet
-                lectus proin. Turpis egestas integer eget aliquet nibh praesent tristique. Sollicitudin tempor id eu
-                nisl
-                nunc. Augue ut lectus arcu bibendum at varius vel pharetra vel. Tempus iaculis urna id volutpat lacus.
-                Tortor aliquam nulla facilisi cras. Nam at lectus urna duis convallis convallis tellus id. Malesuada
-                bibendum arcu vitae elementum. Proin libero nunc consequat interdum varius. Eget lorem dolor sed viverra
-                ipsum nunc. Mattis rhoncus urna neque viverra justo nec ultrices. Non diam phasellus vestibulum lorem
-                sed
-                risus ultricies tristique. Ut ornare lectus sit amet. Integer eget aliquet nibh praesent tristique magna
-                sit
-                amet. Sit amet nulla facilisi morbi tempus iaculis urna. Arcu ac tortor dignissim convallis aenean et
-                tortor
-                at risus. Ut eu sem integer vitae justo. Dictum fusce ut placerat orci nulla pellentesque dignissim enim
-                sit.
-                <br><br>
-                Fusce ut placerat orci nulla pellentesque dignissim enim sit. Nec sagittis aliquam malesuada bibendum
-                arcu
-                vitae elementum. Nisl nisi scelerisque eu ultrices vitae. Lacus luctus accumsan tortor posuere ac ut
-                consequat semper viverra. Id eu nisl nunc mi ipsum faucibus vitae aliquet nec. Ultricies mi eget mauris
-                pharetra et ultrices neque ornare aenean. Cras pulvinar mattis nunc sed. Non diam phasellus vestibulum
-                lorem
-                sed. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Volutpat est velit egestas
-                dui
-                id ornare arcu. Viverra maecenas accumsan lacus vel facilisis. Malesuada pellentesque elit eget gravida.
-                Tristique senectus et netus et malesuada fames ac turpis. Nulla pellentesque dignissim enim sit amet
-                venenatis urna cursus. Sit amet consectetur adipiscing elit ut aliquam.
-                <br><br>
-                Volutpat commodo sed egestas egestas fringilla. Posuere lorem ipsum dolor sit amet consectetur.
-                Pellentesque
-                eu tincidunt tortor aliquam nulla facilisi cras fermentum. Elit duis tristique sollicitudin nibh sit.
-                Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus. Mauris sit amet massa vitae tortor
-                condimentum lacinia. Nisl rhoncus mattis rhoncus urna neque viverra justo. In cursus turpis massa
-                tincidunt
-                dui ut ornare lectus. Turpis massa sed elementum tempus egestas. Interdum varius sit amet mattis
-                vulputate
-                enim. Pellentesque nec nam aliquam sem. Magna ac placerat vestibulum lectus mauris ultrices eros in
-                cursus.
-                Sit amet aliquam id diam maecenas ultricies mi eget mauris. Egestas tellus rutrum tellus pellentesque eu
-                tincidunt tortor. Arcu odio ut sem nulla pharetra diam.
-                <br><br>
-                Dignissim cras tincidunt lobortis feugiat vivamus at. Congue mauris rhoncus aenean vel elit. Et tortor
-                at
-                risus viverra adipiscing. Amet tellus cras adipiscing enim eu turpis egestas pretium. In iaculis nunc
-                sed
-                augue lacus viverra vitae. Dui id ornare arcu odio ut sem nulla pharetra. Magnis dis parturient montes
-                nascetur ridiculus. Tellus integer feugiat scelerisque varius. Interdum velit laoreet id donec ultrices
-                tincidunt. Ac felis donec et odio pellentesque diam volutpat. Tellus cras adipiscing enim eu turpis
-                egestas
-                pretium aenean. Sagittis eu volutpat odio facilisis. Ac placerat vestibulum lectus mauris ultrices eros
-                in.
-                Nisi vitae suscipit tellus mauris a diam maecenas sed. Viverra nibh cras pulvinar mattis nunc sed
-                blandit
-                libero volutpat. Id diam vel quam elementum pulvinar. Tristique magna sit amet purus gravida.
-                <br><br>
+                <h2>Solution Walkthrough</h2>
+                First, we’ll define our input and output. It’s clear that the input is an <strong>array</strong>. The
+                important part here
+                is that our function “returns a <strong>new array</strong>”; we’re returning something that did not
+                previously exist, so
+                we’ll have to <strong>initialize it</strong>.<br><br>
+                The next key phrase is that this function is making a change to “each” string in the input array.
+                Anytime we’re doing something to some or all of the elements in a collection, we’ll generally need some
+                form of <strong>iteration</strong> to accomplish this.<br><br>
+                Lastly, we see that before we can push each element of the input into our output array, we’ll need to
+                add another string to it: 's'. This will involve <strong>string concatenation</strong>. We'll then add
+                each concatenated
+                string to our output array, and return it after we're done.<br><br>
+                Putting this all together, here's the pseudocode for our function:<br><br>
+                <strong>pluralize(inputArr):</strong><br>
+                initialize empty array <strong>outputArr</strong><br>
+                for each <strong>string</strong> of <strong>inputArr</strong><br>
+                &nbsp&nbsp&nbsp&nbspconcatenate <strong>string</strong> with 's'<br>
+                &nbsp&nbsp&nbsp&nbsppush concatenated string into <strong>outputArr</strong><br>
+                return <strong>outputArr</strong><br><br>
+                Let's go through this pseudocode step by step, using the example array from CSX as our input.<br><br>
+                <h2>Coding Demonstration</h2>
+                <pre><code>
+const pluralize = (inputArr) => {
+    const outputArr = [];
+    for (let i = 0; i &lt; inputArr.length; i +=1) { 
+        outputArr.push(`${inputArr[i]}s`); 
+    } 
+    return outputArr; 
+};
+const animals=['dog', 'cat' , 'tree frog' ];
+console.log(pluralize(animals)); // -> ["dogs", "cats", "tree frogs"]
+                </code></pre>
+
 
             </div>
             <a href="/Prerequisites.html">Next: Prerequisites</a><br>
@@ -255,6 +229,8 @@
     </footer>
 
     <script src="../scripts/main.js"></script>
+    <script src="../scripts/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 
 
 </body>

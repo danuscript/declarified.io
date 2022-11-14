@@ -8,6 +8,25 @@
     --pastel-yellow: #fcf5d8;
 }
 
+@font-face {
+    font-family: "Mononoki";
+    src: url("/styles/mononoki_webfont_kit/mononoki-regular-webfont.woff") format("woff");
+}
+
+code {
+    font-family: 'Mononoki', serif;
+    font-size: 15px;
+}
+
+pre {
+    max-width: calc(100vw - calc(var(--column-padding-horizontal) * 2) - 70px);
+    overflow: auto;
+    background-color: #ffffff;
+    padding-left: 15px;
+    padding-right: 15px;
+    white-space: pre;
+}
+
 html {
     min-height: 100%;
     display: flex;
@@ -279,6 +298,12 @@ input[type="search"]:focus {
 @media screen and (max-width: 1200px) {
     .right-column {
         display: none;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+    .middle-column {
+        max-width: calc(100vw - calc(var(--column-padding-horizontal) * 2) - 200px);
     }
 }
 

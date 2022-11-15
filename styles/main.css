@@ -29,10 +29,7 @@ pre {
 blockquote {
     background-color: #f8c3a4;
     margin: 25px 0 25px 0;
-    padding-left: 25px;
-    padding-right: 15px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 15px;
     border-left: 15px var(--pastel-yellow) solid;
     border-radius: 15px;
 }

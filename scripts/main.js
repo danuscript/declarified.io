@@ -5,6 +5,12 @@ const hamburgerMenuButton = document.querySelector('#hamburger-menu-button');
 const hamburgerMenu = document.querySelector('#hamburger-menu');
 const closeHamburgerMenuButton = document.querySelector('#close-hamburger-menu-button');
 
+const hamburgerMenuLinks = [];
+for (let i = 1; i <= 4; i += 1) {
+  const result = document.querySelector(`#hamburger-menu-link-${i}`);
+  if (result) hamburgerMenuLinks.push(result);
+}
+
 let hamburgerMenuOpen = false;
 
 const closeMoreOptionsMenu = () => {
@@ -42,6 +48,29 @@ const openMoreOptionsMenu = () => {
   optionsMenu.style.height = '160px';
 };
 
+const options = {
+  rootMargin: '-200px 0px -200px 0px',
+  threshold: 0,
+};
+
+window.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const id = entry.target.getAttribute('id');
+      if (entry.intersectionRatio > 0) {
+        document.querySelector(`#${id}-link-left`).parentElement.classList.add('active');
+      } else {
+        document.querySelector(`#${id}-link-left`).parentElement.classList.remove('active');
+      }
+    });
+  }, options);
+
+  // Track all sections that have an `id` applied
+  document.querySelectorAll('section[id]').forEach((section) => {
+    observer.observe(section);
+  });
+});
+
 moreOptionsButton.addEventListener('click', openMoreOptionsMenu);
 
 closeOptionsButton.addEventListener('click', closeMoreOptionsMenu);
@@ -49,3 +78,5 @@ closeOptionsButton.addEventListener('click', closeMoreOptionsMenu);
 hamburgerMenuButton.addEventListener('click', openHamburgerMenu);
 
 closeHamburgerMenuButton.addEventListener('click', closeHamburgerMenu);
+
+hamburgerMenuLinks.forEach((link) => { link.addEventListener('click', closeHamburgerMenu); });

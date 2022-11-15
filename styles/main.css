@@ -19,18 +19,22 @@ code {
 }
 
 pre {
-    max-width: calc(100vw - calc(var(--column-padding-horizontal) * 2) - 70px);
+    max-width: calc(100vw - calc(var(--column-padding-horizontal) * 2) - 40px);
     overflow: auto;
-    background-color: #ffffff;
-    padding-left: 15px;
-    padding-right: 15px;
+    background-color: var(--pastel-yellow);
     white-space: pre;
+    border-radius: 15px;
+}
+
+nav a:link {
+    text-decoration: none;
 }
 
 html {
     min-height: 100%;
     display: flex;
     flex-direction: column;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -60,6 +64,24 @@ h1 {
 h2 {
     font-weight: 700;
     margin-top: 0px;
+    
+}
+
+.active {
+    background-color: var(--light-blue);
+}
+
+section {
+    scroll-margin-top: calc(var(--header-height) + 10px);
+}
+
+.column-link {
+    margin-bottom: 10px;
+    height: 30px;
+    border-radius: 15px;
+    transition: all 100ms ease-in-out;
+    display: flex;
+    align-items: center;
 }
 
 header {
@@ -196,6 +218,7 @@ input[type="search"]:focus {
     margin-bottom: 30px;
 }
 
+
 .hamburger-menu {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
@@ -301,7 +324,7 @@ input[type="search"]:focus {
     }
 }
 
-@media screen and (max-width: 1200px) and (min-width: 768px) {
+@media screen and (max-width: 1200px) and (min-width: 770px) {
     .middle-column {
         max-width: calc(100vw - calc(var(--column-padding-horizontal) * 2) - 200px);
     }
@@ -313,7 +336,7 @@ input[type="search"]:focus {
     }
 }
 
-@media screen and (max-width: 991px) and (min-width: 768px) {
+@media screen and (max-width: 991px) and (min-width: 770px) {
 
     .more-options-icon-wrapper {
         display: block;
@@ -347,7 +370,7 @@ input[type="search"]:focus {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
     .left-column {
         display: none;
     }
@@ -363,7 +386,7 @@ input[type="search"]:focus {
     }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 770px) {
     #more-options-button {
         display: block;
     }

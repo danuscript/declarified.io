@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:regular,bold,black,medium">
     <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/highlight.js styles/default.min.css">
+    <link rel="stylesheet" href="../styles/base16/solarized-light.min.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <title>declarified.io | pluralize</title>
 </head>
@@ -84,11 +84,12 @@
 
     <div class="hamburger-menu" id="hamburger-menu">
         <div class="hamburger-menu-content">
-            <div class="hamburger-menu-column">
+            <nav class="hamburger-menu-column">
                 <div class="side-column-labels">On this page:</div>
-                <p class="side-column-text">What is this guide about?</p>
-                <p class="side-column-text">Who is this guide for?</p>
-            </div>
+                <p><a href="#challenge-overview-section" id="hamburger-menu-link-1" class="side-column-text">Challenge Overview</a></p>
+                <p><a href="#solution-walkthrough-section" id="hamburger-menu-link-2" class="side-column-text">Solution Walkthrough</a></p>
+                <p><a href="#coding-demonstration-section" id="hamburger-menu-link-3" class="side-column-text">Coding Demonstration</a></p>
+            </nav>
             <div class="side-column-labels">Sections:</div>
             <p class="side-column-text">Introduction</p>
             <p class="side-column-text">Prerequisites</p>
@@ -118,11 +119,12 @@
 
     <div class="main-content-wrapper">
         <div class="side-column left-column">
-            <div class="combined-column">
+            <nav class="combined-column">
                 <div class="side-column-labels">On this page:</div>
-                <p class="side-column-text">What is this guide about?</p>
-                <p class="side-column-text">Who is this guide for?</p>
-            </div>
+                <div class="column-link"><a href="#challenge-overview-section" class="side-column-text" id="challenge-overview-section-link-left">Challenge Overview</a></div>
+                <div class="column-link"><a href="#solution-walkthrough-section" class="side-column-text" id="solution-walkthrough-section-link-left">Solution Walkthrough</a></div>
+                <div class="column-link"><a href="#coding-demonstration-section" class="side-column-text" id="coding-demonstration-section-link-left">Coding Demonstration</a></div>
+            </nav>
             <div class="side-column-labels">Sections:</div>
             <p class="side-column-text">Introduction</p>
             <p class="side-column-text">Prerequisites</p>
@@ -151,78 +153,84 @@
         <div class="middle-column">
             <h1>pluralize</h1>
             <div class="main-body-text">
-                <h2>Challenge Overview</h2>
-                The first challenge in the Callbacks and Higher Order functions module is called pluralize, and the
-                prompt is as follows:
-                <br>
-                <blockquote>
-                    Create a function <code>pluralize</code> that takes an array of strings as input and returns a new
-                    array with an
-                    "s"
-                    added to the end of each string in the input array. For example, if the string "carrot" is in the
-                    input
-                    array, it should become the string "carrots" in the output array.
-                    <br><br>
-                    The body of the <code>pluralize</code> function should employ a single for loop that pluralizes each
-                    string in
-                    the
-                    input array.<br><br>
-                    Example:<br>
-                    <strong>Input</strong><br>
-                    <code>array = ["dog", "cat", "tree frog"]</code><br>
-                    <strong>Output</strong><br>
-                    <code>map(array) = ["dogs", "cats", "tree frogs"]</code>
+                <section id="challenge-overview-section">
+                    <h2 id="challenge-overview">Challenge Overview</h2>
+                    The first challenge in the Callbacks and Higher Order functions module is called pluralize, and the
+                    prompt is as follows:
                     <br>
-                </blockquote>
-                This challenge’s prompt is very straightforward and we won’t be using any higher order functions to
-                solve it. While it may seem basic, it’s still an important starting point because we’ll be applying the
-                process of deriving a solution to all of the remaining challenges as well. Let’s start by breaking down
-                some of the language used in this prompt so we can see what clues it gives us in terms of how to write a
-                function that solves it.
-                <br><br>
-                <h2>Solution Walkthrough</h2>
-                First, we’ll define our input and output. It’s clear that the input is an <strong>array</strong>. The
-                important part here
-                is that our function “returns a <strong>new array</strong>”; we’re returning something that did not
-                previously exist, so
-                we’ll have to <strong>initialize it</strong>.<br><br>
-                The next key phrase is that this function is making a change to “each” string in the input array.
-                Anytime we’re doing something to some or all of the elements in a collection, we’ll generally need some
-                form of <strong>iteration</strong> to accomplish this.<br><br>
-                Lastly, we see that before we can push each element of the input into our output array, we’ll need to
-                add another string to it: 's'. This will involve <strong>string concatenation</strong>. We'll then add
-                each concatenated
-                string to our output array, and return it after we're done.<br><br>
-                Putting this all together, here's the pseudocode for our function:<br><br>
-                <strong>pluralize(inputArr):</strong><br>
-                initialize empty array <strong>outputArr</strong><br>
-                for each <strong>string</strong> of <strong>inputArr</strong><br>
-                &nbsp&nbsp&nbsp&nbspconcatenate <strong>string</strong> with 's'<br>
-                &nbsp&nbsp&nbsp&nbsppush concatenated string into <strong>outputArr</strong><br>
-                return <strong>outputArr</strong><br><br>
-                Let's go through this pseudocode step by step, using the example array from CSX as our input.<br><br>
-                <h2>Coding Demonstration</h2>
-                <pre><code>
-const pluralize = (inputArr) => {
-    const outputArr = [];
-    for (let i = 0; i &lt; inputArr.length; i +=1) { 
-        outputArr.push(`${inputArr[i]}s`); 
-    } 
-    return outputArr; 
+                    <blockquote>
+                        Create a function <code>pluralize</code> that takes an array of strings as input and returns a new
+                        array with an
+                        "s"
+                        added to the end of each string in the input array. For example, if the string "carrot" is in the
+                        input
+                        array, it should become the string "carrots" in the output array.
+                        <br><br>
+                        The body of the <code>pluralize</code> function should employ a single for loop that pluralizes each
+                        string in
+                        the
+                        input array.<br><br>
+                        Example:<br>
+                        <strong>Input</strong><br>
+                        <code>array = ["dog", "cat", "tree frog"]</code><br>
+                        <strong>Output</strong><br>
+                        <code>map(array) = ["dogs", "cats", "tree frogs"]</code>
+                        <br>
+                    </blockquote>
+                    This challenge’s prompt is very straightforward and we won’t be using any higher order functions to
+                    solve it. While it may seem basic, it’s still an important starting point because we’ll be applying the
+                    process of deriving a solution to all of the remaining challenges as well. Let’s start by breaking down
+                    some of the language used in this prompt so we can see what clues it gives us in terms of how to write a
+                    function that solves it.
+                    <br><br>
+                </section>
+                <section id="solution-walkthrough-section">
+                    <h2 id="solution-walkthrough">Solution Walkthrough</h2>
+                    First, we’ll define our input and output. It’s clear that the input is an <strong>array</strong>. The
+                    important part here
+                    is that our function “returns a <strong>new array</strong>”; we’re returning something that did not
+                    previously exist, so
+                    we’ll have to <strong>initialize it</strong>.<br><br>
+                    The next key phrase is that this function is making a change to “each” string in the input array.
+                    Anytime we’re doing something to some or all of the elements in a collection, we’ll generally need some
+                    form of <strong>iteration</strong> to accomplish this.<br><br>
+                    Lastly, we see that before we can push each element of the input into our output array, we’ll need to
+                    add another string to it: 's'. This will involve <strong>string concatenation</strong>. We'll then add
+                    each concatenated
+                    string to our output array, and return it after we're done.<br><br>
+                    Putting this all together, here's the pseudocode for our function:<br><br>
+                    <strong>pluralize(inputArr):</strong><br>
+                    initialize empty array <strong>outputArr</strong><br>
+                    for each <strong>string</strong> of <strong>inputArr</strong><br>
+                    &nbsp&nbsp&nbsp&nbspconcatenate <strong>string</strong> with 's'<br>
+                    &nbsp&nbsp&nbsp&nbsppush concatenated string into <strong>outputArr</strong><br>
+                    return <strong>outputArr</strong><br><br>
+                    Let's go through this pseudocode step by step, using the example array from CSX as our input.<br><br>
+                </section>
+                <section id="coding-demonstration-section">
+                    <h2 id="coding-demonstration">Coding Demonstration</h2>
+                    <pre><code class="codeblock">const pluralize = (inputArr) => {
+  const outputArr = [];
+  
+  for (let i = 0; i &lg; inputArr.length; i += 1) {
+      outputArr.push(`${inputArr[i]}s`);
+  }
+  
+  return outputArr;
 };
-const animals=['dog', 'cat' , 'tree frog' ];
-console.log(pluralize(animals)); // -> ["dogs", "cats", "tree frogs"]
-                </code></pre>
 
-
+const animals = ['dog', 'cat', 'tree frog'];
+console.log(pluralize(animals)); // -> ['dogs', 'cats', 'tree frogs']</code></pre>
+                </section>
             </div>
             <a href="/Prerequisites.html">Next: Prerequisites</a><br>
         </div>
-        <div class="side-column right-column">
+        <nav class="side-column right-column">
             <div class="side-column-labels">On this page:</div>
-            <p class="side-column-text">What is this guide about?</p>
-            <p class="side-column-text">Who is this guide for?</p>
-        </div>
+            <p><a href="#challenge-overview-section" class="side-column-text">Challenge Overview</a></p>
+            <p><a href="#solution-walkthrough-section" class="side-column-text">Solution Walkthrough</a></p>
+            <p><a href="#coding-demonstration-section" class="side-column-text">Coding Demonstration</a></p>
+        </nav>
     </div>
     <footer>
         2022. declarified.io

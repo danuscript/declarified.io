@@ -26,6 +26,17 @@ pre {
     border-radius: 15px;
 }
 
+blockquote {
+    background-color: #f8c3a4;
+    margin: 25px 0 25px 0;
+    padding-left: 25px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-left: 15px var(--pastel-yellow) solid;
+    border-radius: 15px;
+}
+
 nav a:link {
     text-decoration: none;
 }
@@ -64,10 +75,12 @@ h1 {
 h2 {
     font-weight: 700;
     margin-top: 0px;
-    
+    scroll-margin-top: calc(var(--header-height) + 10px);
 }
 
 .active {
+    border-left: 5px solid var(--dark-blue) !important;
+    font-weight: 700;
     background-color: var(--light-blue);
 }
 
@@ -75,13 +88,43 @@ section {
     scroll-margin-top: calc(var(--header-height) + 10px);
 }
 
+.highlight {
+    display: inline;
+    padding: 5px 0;
+    font-weight: 700;
+    background: var(--light-blue);
+    border-radius: 15px;
+    box-shadow: .5em 0 0 var(--light-blue), -.5em 0 0 var(--light-blue);
+  }
+
+
 .column-link {
     margin-bottom: 10px;
     height: 30px;
-    border-radius: 15px;
     transition: all 100ms ease-in-out;
     display: flex;
     align-items: center;
+}
+
+.sections-labels a:link {
+    text-decoration: none;
+}
+
+.sections-labels a:hover {
+    text-decoration: underline;
+    color: #4374ad;
+}
+
+.toc-link {
+    border-left: 5px solid var(--light-blue);
+    padding-left: 10px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.toc-link:hover {
+    border-color: var(--dark-blue);
+    cursor: pointer;
 }
 
 header {
@@ -106,7 +149,7 @@ header {
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
-    max-width: 1235px;
+    max-width: 1325px;
 }
 
 .header-links {
@@ -150,7 +193,6 @@ form {
     padding: 2px;
     background-color: #8ec6d7;
     height: 27px;
-    margin-right: 20px;
     border-radius: 25px;
 }
 
@@ -206,8 +248,7 @@ input[type="search"]:focus {
 
 .close-hamburger-menu-icon-wrapper {
     display: none;
-    margin-left: 15px;
-    margin-right: 5px;
+    margin-left: 20px;
 }
 
 .hamburger-menu-icon-wrapper {
@@ -218,17 +259,25 @@ input[type="search"]:focus {
     margin-bottom: 30px;
 }
 
+.hamburger-menu-column a:hover {
+    color: #4374ad;
+}
 
 .hamburger-menu {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: var(--header-height); /* Stay at the top */
+    height: 100%;
+    width: 0; 
+    position: fixed; 
+    z-index: 1;
+    top: var(--header-height);
     left: 0;
-    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-x: hidden; 
     background-color: var(--light-blue);
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    text-indent: -300px;
+    transition: 0.5s;
+}
+
+.hamburger-menu a:hover {
+    text-decoration: underline;
 }
 
 .hamburger-menu-content {
@@ -262,7 +311,9 @@ input[type="search"]:focus {
     text-decoration: none;
 }
 
-
+.more-options-menu a:hover {
+    opacity: 1.0;
+}
 
 .menu-search-bar {
     margin-bottom: 25px;
@@ -284,10 +335,10 @@ input[type="search"]:focus {
     padding-bottom: var(--column-padding-vertical);
     padding-left: var(--column-padding-horizontal);
     padding-right: var(--column-padding-horizontal);
-    max-width: 150px;
-    min-width: 150px;
+    max-width: 200px;
+    min-width: 200px;
     flex-shrink: 0;
-    font-size: 14px;
+    font-size: 13px;
     overflow-y: scroll;
     max-height: calc(100vh - var(--header-height) - calc(var(--column-padding-vertical) * 2));
     flex-grow: 1;
@@ -311,6 +362,11 @@ input[type="search"]:focus {
     background-color: var(--pastel-yellow);
 }
 
+.middle-column a:hover {
+    text-decoration: none;
+    color: #4374ad;
+}
+
 .main-body-text {
     padding: 20px;
     margin-bottom: 10px;
@@ -326,7 +382,7 @@ input[type="search"]:focus {
 
 @media screen and (max-width: 1200px) and (min-width: 770px) {
     .middle-column {
-        max-width: calc(100vw - calc(var(--column-padding-horizontal) * 2) - 200px);
+        max-width: calc(100vw - calc(var(--column-padding-horizontal) * 2) - 240px);
     }
 }
 
@@ -395,7 +451,16 @@ input[type="search"]:focus {
     .hamburger-menu-icon-wrapper,
     .close-hamburger-menu-icon,
     .close-hamburger-menu-icon-wrapper {
-        display: none;
+        display: none !important;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    .hamburger-menu {
+        transition: none !important;
+    }
+    .more-options-menu {
+        transition: none !important;;
     }
 }
 

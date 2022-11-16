@@ -85,7 +85,7 @@ const pages = {
   0: {
     id: 0,
     title: 'Introduction',
-    link: 'chapters/introduction.html',
+    link: 'chapters/Introduction.html',
     type: 'Sections',
     content: `Introduction
 

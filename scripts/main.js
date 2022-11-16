@@ -87,6 +87,8 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// searchbox submit
+
 const searchBox = document.querySelector('.search-bar');
 const menuSearchBox = document.querySelector('.menu-search-bar');
 
@@ -101,3 +103,29 @@ menuSearchBox.onsubmit = (event) => {
   const searchTerm = document.querySelector('.menu-search-term').value.replaceAll('?', '');
   window.open(`../search.html?q=${encodeURI(searchTerm)}`, '_top');
 };
+
+// slideshow script
+
+let slideIndex = 1;
+const nextButton = document.querySelector('.next-slide');
+const prevButton = document.querySelector('.prev-slide');
+
+const showSlides = (n) => {
+  let i;
+  const slides = document.getElementsByClassName('slides');
+  if (n > slides.length) { slideIndex = 1; }
+  if (n < 1) { slideIndex = slides.length; }
+  for (i = 0; i < slides.length; i += 1) {
+    slides[i].style.display = 'none';
+  }
+  slides[slideIndex - 1].style.display = 'block';
+};
+
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+nextButton.addEventListener('click', () => { plusSlides(1); });
+prevButton.addEventListener('click', () => { plusSlides(-1); });

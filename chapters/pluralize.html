@@ -13,6 +13,9 @@
 </head>
 
 <body>
+
+    <!-- header -->
+
     <header>
         <div class="header-items">
             <div class="hamburger-menu-icon-wrapper" id="hamburger-menu-button">
@@ -39,15 +42,18 @@
             <div id='logo'>
                 <a href="../index.html">declarified.io</a>
             </div>
+
             <div class="header-links">
                 <a class="header-link-current" href="introduction.html">Guide</a>
                 <a class="header-link" href="../Video.html">Video</a>
                 <a class="header-link" href="../Resources.html">Resources</a>
             </div>
+
             <form class="search-bar main-search-bar">
                 <input class="search-term" type="search" placeholder="Search...">
                 <button type="submit">Search</button>
             </form>
+
             <div class="more-options-icon-wrapper" id="more-options-button">
                 <div class="more-options-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
@@ -57,6 +63,7 @@
                     </svg>
                 </div>
             </div>
+
             <div class="close-options-icon-wrapper" id="close-options-button">
                 <div class="close-options-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-x"
@@ -66,11 +73,10 @@
                     </svg>
                 </div>
             </div>
-
-
         </div>
-
     </header>
+
+    <!-- menus -->
 
     <div class="more-options-menu" id="options-menu">
         <form class="search-bar menu-search-bar">
@@ -117,11 +123,15 @@
                 <p class="side-column-text"><a href="goodKeys.html">goodKeys</a></p>
                 <p class="side-column-text"><a href="Conclusion.html">Conclusion</a></p>
             </span>
-            
         </div>
     </div>
 
+    <!-- page body -->
+
     <div class="main-content-wrapper">
+
+        <!-- left column -->
+
         <div class="side-column left-column">
             <nav class="combined-column">
                 <div class="side-column-labels">On this page:</div>
@@ -134,6 +144,7 @@
                         href="#coding-demonstration-section" class="side-column-text"
                         id="coding-demonstration-section-link-left">Coding Demonstration</a></div>
             </nav>
+
             <div class="side-column-labels">Sections:</div>
             <div class="sections-labels">
                 <p class="side-column-text"><a href="Introduction.html">Introduction</a></p>
@@ -159,6 +170,9 @@
                 <p class="side-column-text"><a href="Conclusion.html">Conclusion</a></p>
             </div>
         </div>
+
+        <!-- middle column - main content -->
+
         <div class="middle-column">
             <h1>pluralize</h1>
             <div class="main-body-text">
@@ -227,6 +241,90 @@
                     return <strong>outputArr</strong><br><br>
                     Let's go through this pseudocode step by step, using the example array from CSX as our
                     input.<br><br>
+                    <div class="slideshow-container">
+                        <div class="button-container">
+                            <a class="prev-slide">&#10094;</a>
+                            <a class="next-slide">&#10095;</a>
+                        </div>
+                        <div class="slides">
+                            <div class="numbertext">1 / 10</div>
+                            <div class='slide-wrapper'>
+                                <img src="../images/test slides/test slide 1.png" class="slide-image"
+                                    style="width:100%">
+                            </div>
+                            <div class="caption">When our function is invoked, it will first import the passed-in array
+                                as
+                                the value of inputArr.</div>
+                        </div>
+                        <div class="slides">
+                            <div class="numbertext">2 / 10</div>
+                            <img src="../images/test slides/test slide 2.png" class="slide-image" style="width:100%">
+                            <div class="caption">We'll start by initializing the array that we'll be returning,
+                                outputArr.</div>
+                        </div>
+                        <div class="slides">
+                            <div class="numbertext">3 / 10</div>
+                            <img src="../images/test slides/test slide 3.png" class="slide-image" style="width:100%">
+                            <div class="caption">Next, we'll iterate through the input array. We will enter the scope of
+                                this for loop's block.
+                                string represents the value of the first element of the inputArr, 'dog'.
+                            </div>
+                        </div>
+                        <div class="slides">
+                            <div class="numbertext">4 / 10</div>
+                            <img src="../images/test slides/test slide 4.png" class="slide-image" style="width:100%">
+                            <div class="caption">We'll add 's' to string, getting 'dogs'.</div>
+                        </div>
+                        <div class="slides">
+                            <div class="numbertext">5 / 10</div>
+                            <img src="../images/test slides/test slide 5.png" class="slide-image" style="width:100%">
+                            <div class="caption">Now, we'll add the concatenated string to outputArr, which is in the
+                                parent scope.
+                                <br><br>
+                                We've reached the end of this block, so we enter the next iteration of the for loop.
+                                string represents the value of the next element of the inputArr, 'cat'.
+                            </div>
+                        </div>
+
+                        <div class="slides">
+                            <div class="numbertext">6 / 10</div>
+                            <img src="../images/test slides/test slide 6.png" class="slide-image" style="width:100%">
+                            <div class="caption">We'll add 's' to string, getting 'cats'.</div>
+                        </div>
+                        <div class="slides">
+                            <div class="numbertext">7 / 10</div>
+                            <img src="../images/test slides/test slide 7.png" class="slide-image" style="width:100%">
+                            <div class="caption">We will once again add the concatenated string to outputArr.
+                                <br><br>
+                                We've reached the end of this for loop block once more, so we enter the next iteration
+                                of the for loop.
+                                The variable string receives the value of the next and final element of the inputArr,
+                                'tree frog'.
+                            </div>
+                        </div>
+                        <div class="slides">
+                            <div class="numbertext">8 / 10</div>
+                            <img src="../images/test slides/test slide 8.png" class="slide-image" style="width:100%">
+                            <div class="caption">We'll add 's' to string, getting 'tree frogs'.</div>
+                        </div>
+                        <div class="slides">
+                            <div class="numbertext">9 / 10</div>
+                            <img src="../images/test slides/test slide 9.png" class="slide-image" style="width:100%">
+                            <div class="caption">Now, we'll add this final concatenated string to outputArr in the
+                                parent scope.
+                                <br><br>
+                                We've reached the end of the for loop block, and there are no more inputArr elements to
+                                iterate through. We return the parent scope and move to the next line after this block.
+                            </div>
+                        </div>
+                        <div class="slides">
+                            <div class="numbertext">10 / 10</div>
+                            <img src="../images/test slides/test slide 10.png" class="slide-image" style="width:100%">
+                            <div class="caption">We can now return the output array, which contains all of the
+                                appropriately concatenated strings.</div>
+                        </div>
+                    </div>
+                    <br>
                 </section>
                 <section id="coding-demonstration-section">
                     <h2 id="coding-demonstration">Coding Demonstration</h2>
@@ -244,11 +342,15 @@ const animals = ['dog', 'cat', 'tree frog'];
 console.log(pluralize(animals)); // -> ['dogs', 'cats', 'tree frogs']</code></pre>
                 </section>
             </div>
-            <div>
-                <a href="First-class Functions.html">Previous: First-class Functions</a> | <a href="map.html">Next: map</a><br>
+            <div class="next-and-prev-pages">
+                <a href="First-class Functions.html">Previous: First-class Functions</a> | <a href="map.html">Next:
+                    map</a><br>
             </div>
-            
+
         </div>
+
+        <!-- right column -->
+
         <nav class="side-column right-column">
             <div class="side-column-labels">On this page:</div>
             <div id="challenge-overview-link-r" class="column-link toc-link"><a href="#challenge-overview-section"
@@ -259,12 +361,16 @@ console.log(pluralize(animals)); // -> ['dogs', 'cats', 'tree frogs']</code></pr
                     class="side-column-text" id="coding-demonstration-section-link-right">Coding Demonstration</a></div>
         </nav>
     </div>
+
+    <!-- footer -->
+
     <footer>
         2022. declarified.io
     </footer>
 
+    <!-- scripts -->
+
     <script src="../scripts/main.js"></script>
-    <script src="../scripts/flexsearch.bundle.js"></script>
     <script src="../scripts/highlight/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 

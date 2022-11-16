@@ -45,7 +45,7 @@
                 <a class="header-link" href="../Resources.html">Resources</a>
             </div>
             <form class="search-bar main-search-bar">
-                <input type="search" placeholder="Search...">
+                <input class="search-term" type="search" placeholder="Search...">
                 <button type="submit">Search</button>
             </form>
             <div class="more-options-icon-wrapper" id="more-options-button">
@@ -74,7 +74,7 @@
 
     <div class="more-options-menu" id="options-menu">
         <form class="search-bar menu-search-bar">
-            <input type="search" placeholder="Search...">
+            <input class="menu-search-term" type="search" placeholder="Search...">
             <button type="submit">Search</button>
         </form>
         <a class="header-link-current" href="introduction.html">Guide</a><br>
@@ -264,6 +264,7 @@ console.log(pluralize(animals)); // -> ['dogs', 'cats', 'tree frogs']</code></pr
     </footer>
 
     <script src="../scripts/main.js"></script>
+    <script src="../scripts/flexsearch.bundle.js"></script>
     <script src="../scripts/highlight/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 

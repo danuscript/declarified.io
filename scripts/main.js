@@ -86,3 +86,18 @@ window.addEventListener('DOMContentLoaded', () => {
     observer.observe(section);
   });
 });
+
+const searchBox = document.querySelector('.search-bar');
+const menuSearchBox = document.querySelector('.menu-search-bar');
+
+searchBox.onsubmit = (event) => {
+  event.preventDefault();
+  const searchTerm = document.querySelector('.search-term').value.replaceAll('?', '');
+  window.open(`../search.html?q=${encodeURI(searchTerm)}`, '_top');
+};
+
+menuSearchBox.onsubmit = (event) => {
+  event.preventDefault();
+  const searchTerm = document.querySelector('.menu-search-term').value.replaceAll('?', '');
+  window.open(`../search.html?q=${encodeURI(searchTerm)}`, '_top');
+};

@@ -351,6 +351,7 @@ input[type="search"]:focus {
 }
 
 .middle-column {
+    flex-grow: 1;
     max-width: 800px;
     padding-left: var(--column-padding-horizontal);
     padding-right: var(--column-padding-horizontal);

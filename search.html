@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:regular,bold,black,medium">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/base16/solarized-light.min.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>declarified.io | pluralize</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-items">
+            <div class="hamburger-menu-icon-wrapper" id="hamburger-menu-button">
+                <div class="hamburger-menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                        class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="close-hamburger-menu-icon-wrapper" id="close-hamburger-menu-button">
+                <div class="close-hamburger-menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-x"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                </div>
+            </div>
+
+
+            <div id='logo'>
+                <a href="../index.html">declarified.io</a>
+            </div>
+            <div class="header-links">
+                <a class="header-link-current" href="chapters/introduction.html">Guide</a>
+                <a class="header-link" href="../Video.html">Video</a>
+                <a class="header-link" href="../Resources.html">Resources</a>
+            </div>
+            <form class="search-bar main-search-bar">
+                <input class="search-term" type="search" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+            <div class="more-options-icon-wrapper" id="more-options-button">
+                <div class="more-options-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                        class="bi bi-three-dots" viewBox="0 0 16 16">
+                        <path
+                            d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="close-options-icon-wrapper" id="close-options-button">
+                <div class="close-options-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-x"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                </div>
+            </div>
+
+
+        </div>
+
+    </header>
+
+    <div class="more-options-menu" id="options-menu">
+        <form class="search-bar menu-search-bar">
+            <input class="menu-search-term" type="search" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+        <a class="header-link-current" href="introduction.html">Guide</a><br>
+        <a class="header-link" href="../Video.html">Video</a><br>
+        <a class="header-link" href="../Resources.html">Resources</a>
+    </div>
+
+    <div class="hamburger-menu" id="hamburger-menu">
+        <div class="hamburger-menu-content">
+
+            <div class="side-column-labels">Sections:</div>
+            <span class="sections-labels">
+                <p class="side-column-text"><a href="chapters/Introduction.html">Introduction</a></p>
+                <p class="side-column-text"><a href="chapters/Prerequisites.html">Prerequisites</a></p>
+                <p class="side-column-text"><a href="chapters/First-class Functions.html">First-class Functions</a></p>
+                <p class="side-column-text"><a href="chapters/pluralize.html">pluralize</a></p>
+                <p class="side-column-text"><a href="chapters/map.html">map</a></p>
+                <p class="side-column-text"><a href="chapters/forEach.html">forEach</a></p>
+                <p class="side-column-text"><a href="chapters/filterArray.html">filterArray</a></p>
+                <p class="side-column-text"><a href="chapters/eitherFilter.html">eitherFilter</a></p>
+                <p class="side-column-text"><a href="chapters/eitherCallback.html">eitherCallback</a></p>
+                <p class="side-column-text"><a href="chapters/reduce.html">reduce</a></p>
+                <p class="side-column-text"><a href="chapters/intersection.html">intersection</a></p>
+                <p class="side-column-text"><a href="chapters/union.html">union</a></p>
+                <p class="side-column-text"><a href="chapters/objOfMatches.html">objOfMatches</a></p>
+                <p class="side-column-text"><a href="chapters/arrToObj.html">arrToObj</a></p>
+                <p class="side-column-text"><a href="chapters/multiMap.html">multiMap</a></p>
+                <p class="side-column-text"><a href="chapters/majority.html">majority</a></p>
+                <p class="side-column-text"><a href="chapters/prioritize.html">prioritize</a></p>
+                <p class="side-column-text"><a href="chapters/countBy.html">countBy</a></p>
+                <p class="side-column-text"><a href="chapters/groupBy.html">groupBy</a></p>
+                <p class="side-column-text"><a href="chapters/goodKeys.html">goodKeys</a></p>
+                <p class="side-column-text"><a href="chapters/Conclusion.html">Conclusion</a></p>
+            </span>
+            
+        </div>
+    </div>
+
+    <div class="main-content-wrapper">
+        <div class="side-column left-column">
+
+            <div class="side-column-labels">Sections:</div>
+            <div class="sections-labels">
+                <p class="side-column-text"><a href="chapters/Introduction.html">Introduction</a></p>
+                <p class="side-column-text"><a href="chapters/Prerequisites.html">Prerequisites</a></p>
+                <p class="side-column-text"><a href="chapters/First-class Functions.html">First-class Functions</a></p>
+                <p class="side-column-text"><a href="chapters/pluralize.html">pluralize</a></p>
+                <p class="side-column-text"><a href="chapters/map.html">map</a></p>
+                <p class="side-column-text"><a href="chapters/forEach.html">forEach</a></p>
+                <p class="side-column-text"><a href="chapters/filterArray.html">filterArray</a></p>
+                <p class="side-column-text"><a href="chapters/eitherFilter.html">eitherFilter</a></p>
+                <p class="side-column-text"><a href="chapters/eitherCallback.html">eitherCallback</a></p>
+                <p class="side-column-text"><a href="chapters/reduce.html">reduce</a></p>
+                <p class="side-column-text"><a href="chapters/intersection.html">intersection</a></p>
+                <p class="side-column-text"><a href="chapters/union.html">union</a></p>
+                <p class="side-column-text"><a href="chapters/objOfMatches.html">objOfMatches</a></p>
+                <p class="side-column-text"><a href="chapters/arrToObj.html">arrToObj</a></p>
+                <p class="side-column-text"><a href="chapters/multiMap.html">multiMap</a></p>
+                <p class="side-column-text"><a href="chapters/majority.html">majority</a></p>
+                <p class="side-column-text"><a href="chapters/prioritize.html">prioritize</a></p>
+                <p class="side-column-text"><a href="chapters/countBy.html">countBy</a></p>
+                <p class="side-column-text"><a href="chapters/groupBy.html">groupBy</a></p>
+                <p class="side-column-text"><a href="chapters/goodKeys.html">goodKeys</a></p>
+                <p class="side-column-text"><a href="chapters/Conclusion.html">Conclusion</a></p>
+            </div>
+        </div>
+        <div class="middle-column">
+            <h1 class="search-title">Search results for: </h1>
+            <div class="main-body-text">
+                <section id="search-results">
+                    
+                </section>
+            </div>
+            
+        </div>
+        <nav class="side-column right-column">
+        </nav>
+    </div>
+    <footer>
+        2022. declarified.io
+    </footer>
+
+    <script src="../scripts/search.js" type="module"></script>
+    <script src="../scripts/flexsearch.bundle.js"></script>
+    <script src="../scripts/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

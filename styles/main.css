@@ -418,7 +418,7 @@ input[type="search"]:focus {
   padding: 16px;
   font-weight: bold;
   font-size: 18px;
-  transition: 0.6s ease;
+  transition: 0.3s ease;
   border-radius: 0 5px 5px 0;
   user-select: none;
 }
@@ -508,6 +508,9 @@ footer {
 @media screen and (max-width: 769px) {
     .left-column {
         display: none;
+    }
+    .prev-slide, .next-slide {
+        transition: none;
     }
     .hamburger-menu-icon,
     .hamburger-menu-icon-wrapper {

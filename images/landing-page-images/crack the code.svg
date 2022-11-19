@@ -1,0 +1,18 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="5" y="5" width="1376" height="803" rx="25" fill="#FCD2BA" stroke="#1B365C" stroke-width="10"/>
+<rect x="1495" y="203" width="420" height="242" rx="25" stroke="#1B365C" stroke-width="10"/>
+<line x1="85" y1="708" x2="1285" y2="708" stroke="#1B365C" stroke-width="10"/>
+<path d="M678.5 922H1304.5C1346.75 922 1381 956.25 1381 998.5C1381 1040.75 1346.75 1075 1304.5 1075H678.5C636.25 1075 602 1040.75 602 998.5C602 956.25 636.25 922 678.5 922Z" stroke="#1B365C" stroke-width="10"/>
+<path d="M303.5 922H457.5C499.75 922 534 956.25 534 998.5C534 1040.75 499.75 1075 457.5 1075H303.5C261.25 1075 227 1040.75 227 998.5C227 956.25 261.25 922 303.5 922Z" fill="#FCD2BA" stroke="#1B365C" stroke-width="10"/>
+<rect x="1490" y="991" width="430" height="89" rx="30" fill="#1B365C"/>
+<rect x="1495" y="698" width="420" height="242" rx="25" fill="#9CE0EE" stroke="#1B365C" stroke-width="10"/>
+<circle cx="81.5" cy="998.5" r="76.5" fill="#1B365C" stroke="#1B365C" stroke-width="10"/>
+<path d="M1490 526C1490 509.431 1503.43 496 1520 496H1890C1906.57 496 1920 509.431 1920 526V555C1920 571.569 1906.57 585 1890 585H1520C1503.43 585 1490 571.569 1490 555V526Z" fill="#1B365C"/>
+<path d="M1490 30C1490 13.4315 1503.43 0 1520 0H1890C1906.57 0 1920 13.4315 1920 30V59C1920 75.5685 1906.57 89 1890 89H1520C1503.43 89 1490 75.5685 1490 59V30Z" fill="#1B365C"/>
+<rect x="330" y="141" width="711" height="429" rx="25" fill="#9CE0EE" stroke="#1B365C" stroke-width="10"/>
+<rect x="560" y="308" width="431" height="89" rx="30" fill="#1B365C"/>
+<rect x="529" y="438" width="335" height="79" rx="25" fill="#FCF5D8" stroke="#1B365C" stroke-width="10"/>
+<rect x="379" y="314" width="140" height="79" rx="25" stroke="#1B365C" stroke-width="10"/>
+<rect x="379" y="188" width="391" height="79" rx="25" fill="#FCF5D8" stroke="#1B365C" stroke-width="10"/>
+<path d="M472 477.5C472 502.077 452.077 522 427.5 522C402.923 522 383 502.077 383 477.5C383 452.923 402.923 433 427.5 433C452.077 433 472 452.923 472 477.5Z" fill="#1B365C"/>
+</svg>

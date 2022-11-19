@@ -519,6 +519,9 @@ footer {
         padding-left: 0px;
         padding-right: 0px;
     }
+    header {
+        overflow: hidden;
+    }
 }
 
 @media screen and (min-width: 770px) {
@@ -542,3 +545,10 @@ footer {
         transition: none !important;;
     }
 }
+
+@media screen and (max-width: 400px) {
+    body * {
+        overflow-x: hidden;
+    }
+  }
+  

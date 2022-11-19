@@ -1,142 +1,228 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,500,700,900">
-    <link href="../styles/main.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:regular,bold,black,medium">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/base16/solarized-light.min.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <title>declarified.io | prioritize</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-lg-3 order-md-first">
-                <div class="test">
-                    column 1
+
+    <!-- header -->
+
+    <header>
+        <div class="header-items">
+            <div class="hamburger-menu-icon-wrapper" id="hamburger-menu-button">
+                <div class="hamburger-menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                        class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
                 </div>
             </div>
-            <div class="col-md-8 col-lg-6 order-first">
-                <div class="main bubble">
-                    <h1>prioritize</h1>
-                    Challenge Overview
-                    The first challenge in the Callbacks and Higher Order functions module is called pluralize, and the
-                    prompt is as follows:
 
-                    Create a function pluralize that takes an array of strings as input and returns a new array with an
-                    "s" added to the end of each string in the input array. For example, if the string "carrot" is in
-                    the input array, it should become the string "carrots" in the output array.
-
-                    The body of the pluralize function should employ a single for loop that pluralizes each string in
-                    the input array.
-                    Example:
-                    Input
-                    array = ["dog", "cat", "tree frog"]
-                    Output
-                    map(array) = ["dogs", "cats", "tree\ frogs"]
-
-
-                    This challenge’s prompt is very straightforward and we won’t be using any higher order functions to
-                    solve it. While it may seem basic, it’s still an important starting point because we’ll be applying
-                    the process of deriving a solution to all of the remaining challenges as well. Let’s start by
-                    breaking down some of the language used in this prompt so we can see what clues it gives us in terms
-                    of how to write a function that solves it.
-                    Solution Walkthrough
-                    First, we’ll define our input and output. It’s clear that the input is an array. The important part
-                    here is that our function “returns a new array”; we’re returning something that did not previously
-                    exist, so we’ll have to initialize it.
-                    The next key phrase is that this function is making a change to “each” string in the input array.
-                    Anytime we’re doing something to some or all of the elements in a collection, we’ll generally need
-                    some form of iteration to accomplish this.
-                    Lastly, we see that before we can push each element of the input into our output array, we’ll need
-                    to add another string to it: 's'. This will involve string concatenation. We'll then add each
-                    concatenated string to our output array, and return it after we're done.
-                    Putting this all together, here's the pseudocode for our function:
-                    pluralize(inputArr):
-                    initialize empty array outputArr
-                    for each string of inputArr
-                    concatenate string with 's'
-                    push concatenated string into outputArr
-                    return outputArr
-                    Let's go through this pseudocode step by step, using the example array from CSX as our input.
-                    pluralize(["dog", "cat", "tree frog"])
-
-                    > pluralize(inputArr):
-                    When our function is invoked, it will first import the passed-in array as the value of inputArr.
-
-                    > initialize empty array outputArr
-                    We'll start by initializing the array that we'll be returning, outputArr.
-
-                    > for each string of inputArr
-                    Next, we'll iterate through the input array. We will enter the scope of this for loop's block.
-                    string represents the value of the first element of the inputArr, 'dog'.
-
-                    > concatenate string with 's'
-                    We'll add 's' to string, getting 'dogs'.
-
-                    > push concatenated string into outputArr
-                    Now, we'll add the concatenated string to outputArr, which is in the parent scope.
-
-                    We've reached the end of this block, so we enter the next iteration of the for loop.
-                    string represents the value of the next element of the inputArr, 'cat'.
-
-                    > concatenate string with 's'
-                    We'll add 's' to string, getting 'cats'.
-
-                    > push concatenated string into outputArr
-                    We will once again add the concatenated string to outputArr.
-
-                    We've reached the end of this for loop block once more, so we enter the next iteration of the for
-                    loop.
-                    The variable string receives the value of the next and final element of the inputArr, 'tree frog'.
-
-                    > concatenate string with 's'
-                    We'll add 's' to string, getting 'tree frogs'.
-
-                    > push concatenated string into outputArr
-                    Now, we'll add this final concatenated string to outputArr in the parent scope.
-
-                    We've reached the end of the for loop block, and there are no more inputArr elements to iterate
-                    through. We return the parent scope and move to the next line after this block.
-
-                    > return outputArr
-                    We can now return the output array, which contains all of the appropriately concatenated strings.
-                    Coding Demonstration
-                    const pluralize = (inputArr) => {
-                    const outputArr = [];
-                    for (let i = 0; i &lt; inputArr.length; i += 1) {
-                    outputArr.push(`${inputArr[i]}s`);
-                    }
-                    return outputArr;
-                    };
-
-                    const animals = ['dog', 'cat', 'tree frog'];
-                    console.log(pluralize(animals)); // -> ["dogs", "cats", "tree frogs"]
-
-
+            <div class="close-hamburger-menu-icon-wrapper" id="close-hamburger-menu-button">
+                <div class="close-hamburger-menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-x"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
                 </div>
             </div>
-            <div class="col-md-12 col-lg-3">
-                <div class="test">
-                    column 3
+
+
+            <div id='logo'>
+                <a href="../index.html">declarified.io</a>
+            </div>
+
+            <div class="header-links">
+                <a class="header-link-current" href="Introduction.html">Guide</a>
+                <a class="header-link" href="../Video.html">Video</a>
+                <a class="header-link" href="../Resources.html">Resources</a>
+            </div>
+
+            <form class="search-bar main-search-bar">
+                <input class="search-term" type="search" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+
+            <div class="more-options-icon-wrapper" id="more-options-button">
+                <div class="more-options-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                        class="bi bi-three-dots" viewBox="0 0 16 16">
+                        <path
+                            d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="close-options-icon-wrapper" id="close-options-button">
+                <div class="close-options-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-x"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
                 </div>
             </div>
         </div>
+    </header>
+
+    <!-- menus -->
+
+    <div class="more-options-menu" id="options-menu">
+        <form class="search-bar menu-search-bar">
+            <input class="menu-search-term" type="search" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+        <a class="header-link-current" href="Introduction.html">Guide</a><br>
+        <a class="header-link" href="../Video.html">Video</a><br>
+        <a class="header-link" href="../Resources.html">Resources</a>
     </div>
 
+    <div class="hamburger-menu" id="hamburger-menu">
+        <div class="hamburger-menu-content">
+            <nav class="hamburger-menu-column">
+                <div class="side-column-labels">On this page:</div>
+                <p><a href="#challenge-overview-section" class="side-column-text hamburger-menu-link">Challenge
+                        Overview</a></p>
+                <p><a href="#solution-walkthrough-section" class="side-column-text hamburger-menu-link">Solution
+                        Walkthrough</a></p>
+                <p><a href="#coding-demonstration-section" class="side-column-text hamburger-menu-link">Coding
+                        Demonstration</a></p>
+            </nav>
+            <div class="side-column-labels">Sections:</div>
+            <span class="sections-labels">
+                <p class="side-column-text"><a href="Introduction.html">Introduction</a></p>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
-        crossorigin="anonymous"></script>
+                <p class="side-column-text"><a href="First-class Functions.html">First-class Functions</a></p>
+                <p class="side-column-text"><a href="pluralize.html">pluralize</a></p>
+                <p class="side-column-text"><a href="map.html">map</a></p>
+                <p class="side-column-text"><a href="forEach.html">forEach</a></p>
+                <p class="side-column-text"><a href="filterArray.html">filterArray</a></p>
+                <p class="side-column-text"><a href="eitherFilter.html">eitherFilter</a></p>
+                <p class="side-column-text"><a href="eitherCallback.html">eitherCallback</a></p>
+                <p class="side-column-text"><a href="reduce.html">reduce</a></p>
+                <p class="side-column-text"><a href="intersection.html">intersection</a></p>
+                <p class="side-column-text"><a href="union.html">union</a></p>
+                <p class="side-column-text"><a href="objOfMatches.html">objOfMatches</a></p>
+                <p class="side-column-text"><a href="arrToObj.html">arrToObj</a></p>
+                <p class="side-column-text"><a href="multiMap.html">multiMap</a></p>
+                <p class="side-column-text"><a href="majority.html">majority</a></p>
+                <p class="side-column-text"><a href="prioritize.html">prioritize</a></p>
+                <p class="side-column-text"><a href="countBy.html">countBy</a></p>
+                <p class="side-column-text"><a href="groupBy.html">groupBy</a></p>
+                <p class="side-column-text"><a href="goodKeys.html">goodKeys</a></p>
+                <p class="side-column-text"><a href="Conclusion.html">Conclusion</a></p>
+            </span>
+        </div>
+    </div>
+
+    <!-- page body -->
+
+    <div class="main-content-wrapper">
+
+        <!-- left column -->
+
+        <div class="side-column left-column">
+            <nav class="combined-column">
+                <div class="side-column-labels">On this page:</div>
+                <div id="challenge-overview-link-l" class="column-link toc-link"><a href="#challenge-overview-section"
+                        class="side-column-text" id="challenge-overview-section-link-left">Challenge Overview</a></div>
+                <div id="solution-walkthrough-link-l" class="column-link toc-link"><a
+                        href="#solution-walkthrough-section" class="side-column-text"
+                        id="solution-walkthrough-section-link-left">Solution Walkthrough</a></div>
+                <div id="coding-demonstration-link-l" class="column-link toc-link"><a
+                        href="#coding-demonstration-section" class="side-column-text"
+                        id="coding-demonstration-section-link-left">Coding Demonstration</a></div>
+            </nav>
+
+            <div class="side-column-labels">Sections:</div>
+            <div class="sections-labels">
+                <p class="side-column-text"><a href="Introduction.html">Introduction</a></p>
+
+                <p class="side-column-text"><a href="First-class Functions.html">First-class Functions</a></p>
+                <p class="side-column-text"><a href="pluralize.html">pluralize</a></p>
+                <p class="side-column-text"><a href="map.html">map</a></p>
+                <p class="side-column-text"><a href="forEach.html">forEach</a></p>
+                <p class="side-column-text"><a href="filterArray.html">filterArray</a></p>
+                <p class="side-column-text"><a href="eitherFilter.html">eitherFilter</a></p>
+                <p class="side-column-text"><a href="eitherCallback.html">eitherCallback</a></p>
+                <p class="side-column-text"><a href="reduce.html">reduce</a></p>
+                <p class="side-column-text"><a href="intersection.html">intersection</a></p>
+                <p class="side-column-text"><a href="union.html">union</a></p>
+                <p class="side-column-text"><a href="objOfMatches.html">objOfMatches</a></p>
+                <p class="side-column-text"><a href="arrToObj.html">arrToObj</a></p>
+                <p class="side-column-text"><a href="multiMap.html">multiMap</a></p>
+                <p class="side-column-text"><a href="majority.html">majority</a></p>
+                <p class="side-column-text"><span class="highlight"><a href="prioritize.html">prioritize</a></span></p>
+                <p class="side-column-text"><a href="countBy.html">countBy</a></p>
+                <p class="side-column-text"><a href="groupBy.html">groupBy</a></p>
+                <p class="side-column-text"><a href="goodKeys.html">goodKeys</a></p>
+                <p class="side-column-text"><a href="Conclusion.html">Conclusion</a></p>
+            </div>
+        </div>
+
+        <!-- middle column - main content -->
+
+        <div class="middle-column">
+            <h1>prioritize</h1>
+            <div class="main-body-text">
+                <section id="challenge-overview-section">
+                    <h2 id="challenge-overview">Challenge Overview</h2>
+                    Coming soon!
+                    <br><br>
+                </section>
+                <section id="solution-walkthrough-section">
+                    <h2 id="solution-walkthrough">Solution Walkthrough</h2>
+                    Coming soon!<br><br>
+                </section>
+                <section id="coding-demonstration-section">
+                    <h2 id="coding-demonstration">Coding Demonstration</h2>
+                    Coming soon!
+                    <br><br>
+                </section>
+            </div>
+            <div class="next-and-prev-pages">
+                <a href="majority.html">Previous: majority</a> • <a href="countBy.html">Next:
+                    countBy</a><br>
+            </div>
+
+        </div>
+
+        <!-- right column -->
+
+        <nav class="side-column right-column">
+            <div class="side-column-labels">On this page:</div>
+            <div id="challenge-overview-link-r" class="column-link toc-link"><a href="#challenge-overview-section"
+                    class="side-column-text" id="challenge-overview-section-link-right">Challenge Overview</a></div>
+            <div id="solution-walkthrough-link-r" class="column-link toc-link"><a href="#solution-walkthrough-section"
+                    class="side-column-text" id="solution-walkthrough-section-link-right">Solution Walkthrough</a></div>
+            <div id="coding-demonstration-link-r" class="column-link toc-link"><a href="#coding-demonstration-section"
+                    class="side-column-text" id="coding-demonstration-section-link-right">Coding Demonstration</a></div>
+        </nav>
+    </div>
+
+    <!-- footer -->
+
+    <footer>
+        2022. declarified.io
+    </footer>
+
+    <!-- scripts -->
+
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
 </body>
 
 </html>

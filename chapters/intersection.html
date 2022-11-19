@@ -102,7 +102,7 @@
             <div class="side-column-labels">Sections:</div>
             <span class="sections-labels">
                 <p class="side-column-text"><a href="Introduction.html">Introduction</a></p>
-                <p class="side-column-text"><a href="Prerequisites.html">Prerequisites</a></p>
+
                 <p class="side-column-text"><a href="First-class Functions.html">First-class Functions</a></p>
                 <p class="side-column-text"><a href="pluralize.html">pluralize</a></p>
                 <p class="side-column-text"><a href="map.html">map</a></p>
@@ -148,7 +148,7 @@
             <div class="side-column-labels">Sections:</div>
             <div class="sections-labels">
                 <p class="side-column-text"><a href="Introduction.html">Introduction</a></p>
-                <p class="side-column-text"><a href="Prerequisites.html">Prerequisites</a></p>
+
                 <p class="side-column-text"><a href="First-class Functions.html">First-class Functions</a></p>
                 <p class="side-column-text"><a href="pluralize.html">pluralize</a></p>
                 <p class="side-column-text"><a href="map.html">map</a></p>
@@ -178,172 +178,22 @@
             <div class="main-body-text">
                 <section id="challenge-overview-section">
                     <h2 id="challenge-overview">Challenge Overview</h2>
-                    The first challenge in the Callbacks and Higher Order functions module is called <a
-                        href="https://csx.codesmith.io/units/callbacks/challenge-pluralize">pluralize</a>, and the
-                    prompt is as follows:
-                    <br>
-                    <blockquote>
-                        Create a function <code>pluralize</code> that takes an array of strings as input and returns a
-                        new
-                        array with an
-                        "s"
-                        added to the end of each string in the input array. For example, if the string "carrot" is in
-                        the
-                        input
-                        array, it should become the string "carrots" in the output array.
-                        <br><br>
-                        The body of the <code>pluralize</code> function should employ a single for loop that pluralizes
-                        each
-                        string in
-                        the
-                        input array.<br><br>
-                        Example:<br>
-                        <strong>Input</strong><br>
-                        <code>array = ["dog", "cat", "tree frog"]</code><br>
-                        <strong>Output</strong><br>
-                        <code>map(array) = ["dogs", "cats", "tree frogs"]</code>
-                        <br>
-                    </blockquote>
-                    This challenge’s prompt is very straightforward and we won’t be using any higher order functions to
-                    solve it. While it may seem basic, it’s still an important starting point because we’ll be applying
-                    the
-                    process of deriving a solution to all of the remaining challenges as well. Let’s start by breaking
-                    down
-                    some of the language used in this prompt so we can see what clues it gives us in terms of how to
-                    write a
-                    function that solves it.
+                    Coming soon!
                     <br><br>
                 </section>
                 <section id="solution-walkthrough-section">
                     <h2 id="solution-walkthrough">Solution Walkthrough</h2>
-                    First, we’ll define our input and output. It’s clear that the input is an <strong>array</strong>.
-                    The
-                    important part here
-                    is that our function “returns a <strong>new array</strong>”; we’re returning something that did not
-                    previously exist, so
-                    we’ll have to <strong>initialize it</strong>.<br><br>
-                    The next key phrase is that this function is making a change to “each” string in the input array.
-                    Anytime we’re doing something to some or all of the elements in a collection, we’ll generally need
-                    some
-                    form of <strong>iteration</strong> to accomplish this.<br><br>
-                    Lastly, we see that before we can push each element of the input into our output array, we’ll need
-                    to
-                    add another string to it: 's'. This will involve <strong>string concatenation</strong>. We'll then
-                    add
-                    each concatenated
-                    string to our output array, and return it after we're done.<br><br>
-                    Putting this all together, here's the pseudocode for our function:<br><br>
-                    <strong>pluralize(inputArr):</strong><br>
-                    initialize empty array <strong>outputArr</strong><br>
-                    for each <strong>string</strong> of <strong>inputArr</strong><br>
-                    &nbsp&nbsp&nbsp&nbspconcatenate <strong>string</strong> with 's'<br>
-                    &nbsp&nbsp&nbsp&nbsppush concatenated string into <strong>outputArr</strong><br>
-                    return <strong>outputArr</strong><br><br>
-                    Let's go through this pseudocode step by step, using the example array from CSX as our
-                    input.<br><br>
-                    <div class="slideshow-container">
-                        <div class="button-container">
-                            <a class="prev-slide">&#10094;</a>
-                            <a class="next-slide">&#10095;</a>
-                        </div>
-                        <div class="slides">
-                            <div class="numbertext">1 / 10</div>
-                            <div class='slide-wrapper'>
-                                <img src="../images/test slides/test slide 1.png" class="slide-image"
-                                    style="width:100%">
-                            </div>
-                            <div class="caption">When our function is invoked, it will first import the passed-in array
-                                as
-                                the value of inputArr.</div>
-                        </div>
-                        <div class="slides">
-                            <div class="numbertext">2 / 10</div>
-                            <img src="../images/test slides/test slide 2.png" class="slide-image" style="width:100%">
-                            <div class="caption">We'll start by initializing the array that we'll be returning,
-                                outputArr.</div>
-                        </div>
-                        <div class="slides">
-                            <div class="numbertext">3 / 10</div>
-                            <img src="../images/test slides/test slide 3.png" class="slide-image" style="width:100%">
-                            <div class="caption">Next, we'll iterate through the input array. We will enter the scope of
-                                this for loop's block.
-                                string represents the value of the first element of the inputArr, 'dog'.
-                            </div>
-                        </div>
-                        <div class="slides">
-                            <div class="numbertext">4 / 10</div>
-                            <img src="../images/test slides/test slide 4.png" class="slide-image" style="width:100%">
-                            <div class="caption">We'll add 's' to string, getting 'dogs'.</div>
-                        </div>
-                        <div class="slides">
-                            <div class="numbertext">5 / 10</div>
-                            <img src="../images/test slides/test slide 5.png" class="slide-image" style="width:100%">
-                            <div class="caption">Now, we'll add the concatenated string to outputArr, which is in the
-                                parent scope.
-                                <br><br>
-                                We've reached the end of this block, so we enter the next iteration of the for loop.
-                                string represents the value of the next element of the inputArr, 'cat'.
-                            </div>
-                        </div>
-
-                        <div class="slides">
-                            <div class="numbertext">6 / 10</div>
-                            <img src="../images/test slides/test slide 6.png" class="slide-image" style="width:100%">
-                            <div class="caption">We'll add 's' to string, getting 'cats'.</div>
-                        </div>
-                        <div class="slides">
-                            <div class="numbertext">7 / 10</div>
-                            <img src="../images/test slides/test slide 7.png" class="slide-image" style="width:100%">
-                            <div class="caption">We will once again add the concatenated string to outputArr.
-                                <br><br>
-                                We've reached the end of this for loop block once more, so we enter the next iteration
-                                of the for loop.
-                                The variable string receives the value of the next and final element of the inputArr,
-                                'tree frog'.
-                            </div>
-                        </div>
-                        <div class="slides">
-                            <div class="numbertext">8 / 10</div>
-                            <img src="../images/test slides/test slide 8.png" class="slide-image" style="width:100%">
-                            <div class="caption">We'll add 's' to string, getting 'tree frogs'.</div>
-                        </div>
-                        <div class="slides">
-                            <div class="numbertext">9 / 10</div>
-                            <img src="../images/test slides/test slide 9.png" class="slide-image" style="width:100%">
-                            <div class="caption">Now, we'll add this final concatenated string to outputArr in the
-                                parent scope.
-                                <br><br>
-                                We've reached the end of the for loop block, and there are no more inputArr elements to
-                                iterate through. We return the parent scope and move to the next line after this block.
-                            </div>
-                        </div>
-                        <div class="slides">
-                            <div class="numbertext">10 / 10</div>
-                            <img src="../images/pluralize-slides/pluralize slide 1.png" class="slide-image" style="width:100%">
-                            <div class="caption">We can now return the output array, which contains all of the
-                                appropriately concatenated strings.</div>
-                        </div>
-                    </div>
-                    <br>
+                    Coming soon!<br><br>
                 </section>
                 <section id="coding-demonstration-section">
                     <h2 id="coding-demonstration">Coding Demonstration</h2>
-                    <pre><code class="codeblock">const intersection = (inputArrs) => (
-  inputArrs.reduce((accumulator, subArr) => (
-    subArr.filter((element) => accumulator.includes(element))
-  ))
-);
-
-const arr1 = [5, 10, 15, 20];
-const arr2 = [15, 88, 1, 5, 7];
-const arr3 = [1, 10, 15, 5, 20];
-console.log(intersection([arr1, arr2, arr3])); // -> [5, 15]
-                      </code></pre>
+                    Coming soon!
+                    <br><br>
                 </section>
             </div>
             <div class="next-and-prev-pages">
-                <a href="First-class Functions.html">Previous: First-class Functions</a> | <a href="map.html">Next:
-                    map</a><br>
+                <a href="reduce.html">Previous: reduce</a> • <a href="union.html">Next:
+                    union</a><br>
             </div>
 
         </div>

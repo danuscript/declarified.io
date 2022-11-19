@@ -1,17 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="scripts/main.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:regular,bold,black,medium">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/base16/solarized-light.min.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <title>declarified.io | filterArray</title>
 </head>
+
 <body>
-    <div id="header">
-        <a href="../index.html">declarified.io</a>
+
+    <!-- header -->
+
+    <header>
+        <div class="header-items">
+            <div class="hamburger-menu-icon-wrapper" id="hamburger-menu-button">
+                <div class="hamburger-menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                        class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="close-hamburger-menu-icon-wrapper" id="close-hamburger-menu-button">
+                <div class="close-hamburger-menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-x"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                </div>
+            </div>
+
+
+            <div id='logo'>
+                <a href="../index.html">declarified.io</a>
+            </div>
+
+            <div class="header-links">
+                <a class="header-link-current" href="Introduction.html">Guide</a>
+                <a class="header-link" href="../Video.html">Video</a>
+                <a class="header-link" href="../Resources.html">Resources</a>
+            </div>
+
+            <form class="search-bar main-search-bar">
+                <input class="search-term" type="search" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+
+            <div class="more-options-icon-wrapper" id="more-options-button">
+                <div class="more-options-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                        class="bi bi-three-dots" viewBox="0 0 16 16">
+                        <path
+                            d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="close-options-icon-wrapper" id="close-options-button">
+                <div class="close-options-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-x"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- menus -->
+
+    <div class="more-options-menu" id="options-menu">
+        <form class="search-bar menu-search-bar">
+            <input class="menu-search-term" type="search" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+        <a class="header-link-current" href="Introduction.html">Guide</a><br>
+        <a class="header-link" href="../Video.html">Video</a><br>
+        <a class="header-link" href="../Resources.html">Resources</a>
     </div>
-    <h1>filterArray</h1>
-    <a href="../contents.html">contents</a>
+
+    <div class="hamburger-menu" id="hamburger-menu">
+        <div class="hamburger-menu-content">
+            <nav class="hamburger-menu-column">
+                <div class="side-column-labels">On this page:</div>
+                <p><a href="#challenge-overview-section" class="side-column-text hamburger-menu-link">Challenge
+                        Overview</a></p>
+                <p><a href="#solution-walkthrough-section" class="side-column-text hamburger-menu-link">Solution
+                        Walkthrough</a></p>
+                <p><a href="#coding-demonstration-section" class="side-column-text hamburger-menu-link">Coding
+                        Demonstration</a></p>
+                <p><a href="#the-build-in-filter-method-section" class="side-column-text hamburger-menu-link">The Built-in filter Method</a></p>
+            </nav>
+            <div class="side-column-labels">Sections:</div>
+            <span class="sections-labels">
+                <p class="side-column-text"><a href="Introduction.html">Introduction</a></p>
+
+                <p class="side-column-text"><a href="First-class Functions.html">First-class Functions</a></p>
+                <p class="side-column-text"><a href="pluralize.html">pluralize</a></p>
+                <p class="side-column-text"><a href="map.html">map</a></p>
+                <p class="side-column-text"><a href="forEach.html">forEach</a></p>
+                <p class="side-column-text"><a href="filterArray.html">filterArray</a></p>
+                <p class="side-column-text"><a href="eitherFilter.html">eitherFilter</a></p>
+                <p class="side-column-text"><a href="eitherCallback.html">eitherCallback</a></p>
+                <p class="side-column-text"><a href="reduce.html">reduce</a></p>
+                <p class="side-column-text"><a href="intersection.html">intersection</a></p>
+                <p class="side-column-text"><a href="union.html">union</a></p>
+                <p class="side-column-text"><a href="objOfMatches.html">objOfMatches</a></p>
+                <p class="side-column-text"><a href="arrToObj.html">arrToObj</a></p>
+                <p class="side-column-text"><a href="multiMap.html">multiMap</a></p>
+                <p class="side-column-text"><a href="majority.html">majority</a></p>
+                <p class="side-column-text"><a href="prioritize.html">prioritize</a></p>
+                <p class="side-column-text"><a href="countBy.html">countBy</a></p>
+                <p class="side-column-text"><a href="groupBy.html">groupBy</a></p>
+                <p class="side-column-text"><a href="goodKeys.html">goodKeys</a></p>
+                <p class="side-column-text"><a href="Conclusion.html">Conclusion</a></p>
+            </span>
+        </div>
+    </div>
+
+    <!-- page body -->
+
+    <div class="main-content-wrapper">
+
+        <!-- left column -->
+
+        <div class="side-column left-column">
+            <nav class="combined-column">
+                <div class="side-column-labels">On this page:</div>
+                <div id="challenge-overview-link-l" class="column-link toc-link"><a href="#challenge-overview-section"
+                        class="side-column-text" id="challenge-overview-section-link-left">Challenge Overview</a></div>
+                <div id="solution-walkthrough-link-l" class="column-link toc-link"><a
+                        href="#solution-walkthrough-section" class="side-column-text"
+                        id="solution-walkthrough-section-link-left">Solution Walkthrough</a></div>
+                <div id="coding-demonstration-link-l" class="column-link toc-link"><a
+                        href="#coding-demonstration-section" class="side-column-text"
+                        id="coding-demonstration-section-link-left">Coding Demonstration</a></div>
+                <div id="the-built-in-filter-method-link-l" class="column-link toc-link"><a
+                        href="#the-built-in-filter-method-section" class="side-column-text"
+                        id="the-built-in-filter-method-section-link-left">The Built-in filter Method</a></div>
+            </nav>
+
+            <div class="side-column-labels">Sections:</div>
+            <div class="sections-labels">
+                <p class="side-column-text"><a href="Introduction.html">Introduction</a></p>
+
+                <p class="side-column-text"><a href="First-class Functions.html">First-class Functions</a></p>
+                <p class="side-column-text"><a href="pluralize.html">pluralize</a></p>
+                <p class="side-column-text"><a href="map.html">map</a></p>
+                <p class="side-column-text"><a href="forEach.html">forEach</a></p>
+                <p class="side-column-text"><span class="highlight"><a href="filterArray.html">filterArray</a></span></p>
+                <p class="side-column-text"><a href="eitherFilter.html">eitherFilter</a></p>
+                <p class="side-column-text"><a href="eitherCallback.html">eitherCallback</a></p>
+                <p class="side-column-text"><a href="reduce.html">reduce</a></p>
+                <p class="side-column-text"><a href="intersection.html">intersection</a></p>
+                <p class="side-column-text"><a href="union.html">union</a></p>
+                <p class="side-column-text"><a href="objOfMatches.html">objOfMatches</a></p>
+                <p class="side-column-text"><a href="arrToObj.html">arrToObj</a></p>
+                <p class="side-column-text"><a href="multiMap.html">multiMap</a></p>
+                <p class="side-column-text"><a href="majority.html">majority</a></p>
+                <p class="side-column-text"><a href="prioritize.html">prioritize</a></p>
+                <p class="side-column-text"><a href="countBy.html">countBy</a></p>
+                <p class="side-column-text"><a href="groupBy.html">groupBy</a></p>
+                <p class="side-column-text"><a href="goodKeys.html">goodKeys</a></p>
+                <p class="side-column-text"><a href="Conclusion.html">Conclusion</a></p>
+            </div>
+        </div>
+
+        <!-- middle column - main content -->
+
+        <div class="middle-column">
+            <h1>filterArray</h1>
+            <div class="main-body-text">
+                <section id="challenge-overview-section">
+                    <h2 id="challenge-overview">Challenge Overview</h2>
+                    Coming soon!
+                    <br><br>
+                </section>
+                <section id="solution-walkthrough-section">
+                    <h2 id="solution-walkthrough">Solution Walkthrough</h2>
+                    Coming soon!<br><br>
+                </section>
+                <section id="coding-demonstration-section">
+                    <h2 id="coding-demonstration">Coding Demonstration</h2>
+                    Coming soon!
+                    <br><br>
+                </section>
+                <section id="the-built-in-filter-method-section">
+                    <h2 id="the-built-in-filter-method">The Built-in filter Method</h2>
+                    Coming soon!
+                </section>
+            </div>
+            <div class="next-and-prev-pages">
+                <a href="forEach.html">Previous: forEach</a> • <a href="eitherFilter.html">Next:
+                    eitherFilter</a><br>
+            </div>
+
+        </div>
+
+        <!-- right column -->
+
+        <nav class="side-column right-column">
+            <div class="side-column-labels">On this page:</div>
+            <div id="challenge-overview-link-r" class="column-link toc-link"><a href="#challenge-overview-section"
+                    class="side-column-text" id="challenge-overview-section-link-right">Challenge Overview</a></div>
+            <div id="solution-walkthrough-link-r" class="column-link toc-link"><a href="#solution-walkthrough-section"
+                    class="side-column-text" id="solution-walkthrough-section-link-right">Solution Walkthrough</a></div>
+            <div id="coding-demonstration-link-r" class="column-link toc-link"><a href="#coding-demonstration-section"
+                    class="side-column-text" id="coding-demonstration-section-link-right">Coding Demonstration</a></div>
+            <div id="the-built-in-filter-method-link-r" class="column-link toc-link"><a
+                    href="#the-built-in-filter-method-section" class="side-column-text"
+                    id="the-built-in-filter-method-section-link-right">The Built-in filter Method</a></div>
+        </nav>
+    </div>
+
+    <!-- footer -->
+
+    <footer>
+        2022. declarified.io
+    </footer>
+
+    <!-- scripts -->
+
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
 </body>
+
 </html>

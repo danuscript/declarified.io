@@ -7,11 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:regular,bold,black,medium">
     <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/base16/solarized-light.min.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <title>declarified.io | introduction</title>
+    <title>declarified.io | Introduction</title>
 </head>
 
 <body>
+
+    <!-- header -->
+
     <header>
         <div class="header-items">
             <div class="hamburger-menu-icon-wrapper" id="hamburger-menu-button">
@@ -38,15 +42,18 @@
             <div id='logo'>
                 <a href="../index.html">declarified.io</a>
             </div>
+
             <div class="header-links">
                 <a class="header-link-current" href="Introduction.html">Guide</a>
                 <a class="header-link" href="../Video.html">Video</a>
                 <a class="header-link" href="../Resources.html">Resources</a>
             </div>
+
             <form class="search-bar main-search-bar">
-                <input type="search" placeholder="Search...">
+                <input class="search-term" type="search" placeholder="Search...">
                 <button type="submit">Search</button>
             </form>
+
             <div class="more-options-icon-wrapper" id="more-options-button">
                 <div class="more-options-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
@@ -56,6 +63,7 @@
                     </svg>
                 </div>
             </div>
+
             <div class="close-options-icon-wrapper" id="close-options-button">
                 <div class="close-options-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-x"
@@ -65,15 +73,14 @@
                     </svg>
                 </div>
             </div>
-
-
         </div>
-
     </header>
+
+    <!-- menus -->
 
     <div class="more-options-menu" id="options-menu">
         <form class="search-bar menu-search-bar">
-            <input type="search" placeholder="Search...">
+            <input class="menu-search-term" type="search" placeholder="Search...">
             <button type="submit">Search</button>
         </form>
         <a class="header-link-current" href="Introduction.html">Guide</a><br>
@@ -83,106 +90,173 @@
 
     <div class="hamburger-menu" id="hamburger-menu">
         <div class="hamburger-menu-content">
-            <div class="hamburger-menu-column">
+            <nav class="hamburger-menu-column">
                 <div class="side-column-labels">On this page:</div>
-                <p class="side-column-text">What is this guide about?</p>
-                <p class="side-column-text">Who is this guide for?</p>
-            </div>
+                <p><a href="#what-is-this-guide-about-section" class="side-column-text hamburger-menu-link">What is this
+                        guide about?</a></p>
+                <p><a href="#who-is-this-guide-for-section" class="side-column-text hamburger-menu-link">Who is this
+                        guide for?</a></p>
+                <p><a href="#prerequisites-section" class="side-column-text hamburger-menu-link">Prerequisites</a></p>
+            </nav>
             <div class="side-column-labels">Sections:</div>
-                <p class="side-column-text">Introduction</p>
-                <p class="side-column-text">Prerequisites</p>
-                <p class="side-column-text">pluralize</p>
-                <p class="side-column-text">Challenge Overview</p>
-                <p class="side-column-text">Explanation</p>
-                <p class="side-column-text">Code walkthrough</p>
-                <p class="side-column-text">map</p>
-                <p class="side-column-text">forEach</p>
-                <p class="side-column-text">filterArray</p>
-                <p class="side-column-text">eitherFilter</p>
-                <p class="side-column-text">eitherCallback</p>
-                <p class="side-column-text">reduce</p>
-                <p class="side-column-text">intersection</p>
-                <p class="side-column-text">union</p>
-                <p class="side-column-text">objOfMatches</p>
-                <p class="side-column-text">arrToObj</p>
-                <p class="side-column-text">multiMap</p>
-                <p class="side-column-text">majority</p>
-                <p class="side-column-text">prioritize</p>
-                <p class="side-column-text">countBy</p>
-                <p class="side-column-text">groupBy</p>
-                <p class="side-column-text">goodKeys</p>
-                <p class="side-column-text">Conclusion</p>
+            <span class="sections-labels">
+                <p class="side-column-text"><a href="Introduction.html">Introduction</a></p>
+
+                <p class="side-column-text"><a href="First-class Functions.html">First-class Functions</a></p>
+                <p class="side-column-text"><a href="pluralize.html">pluralize</a></p>
+                <p class="side-column-text"><a href="map.html">map</a></p>
+                <p class="side-column-text"><a href="forEach.html">forEach</a></p>
+                <p class="side-column-text"><a href="filterArray.html">filterArray</a></p>
+                <p class="side-column-text"><a href="eitherFilter.html">eitherFilter</a></p>
+                <p class="side-column-text"><a href="eitherCallback.html">eitherCallback</a></p>
+                <p class="side-column-text"><a href="reduce.html">reduce</a></p>
+                <p class="side-column-text"><a href="intersection.html">intersection</a></p>
+                <p class="side-column-text"><a href="union.html">union</a></p>
+                <p class="side-column-text"><a href="objOfMatches.html">objOfMatches</a></p>
+                <p class="side-column-text"><a href="arrToObj.html">arrToObj</a></p>
+                <p class="side-column-text"><a href="multiMap.html">multiMap</a></p>
+                <p class="side-column-text"><a href="majority.html">majority</a></p>
+                <p class="side-column-text"><a href="prioritize.html">prioritize</a></p>
+                <p class="side-column-text"><a href="countBy.html">countBy</a></p>
+                <p class="side-column-text"><a href="groupBy.html">groupBy</a></p>
+                <p class="side-column-text"><a href="goodKeys.html">goodKeys</a></p>
+                <p class="side-column-text"><a href="Conclusion.html">Conclusion</a></p>
+            </span>
         </div>
     </div>
 
+    <!-- page body -->
+
     <div class="main-content-wrapper">
+
+        <!-- left column -->
+
         <div class="side-column left-column">
-            <div class="combined-column">
+            <nav class="combined-column">
+
                 <div class="side-column-labels">On this page:</div>
-                <p class="side-column-text">What is this guide about?</p>
-                <p class="side-column-text">Who is this guide for?</p>
-            </div>
+                <div id="what-is-this-guide-about-link-l" class="column-link toc-link"><a
+                        href="#what-is-this-guide-about-section" class="side-column-text"
+                        id="what-is-this-guide-about-section-link-left">What is this guide about?</a></div>
+                <div id="who-is-this-guide-for-link-l" class="column-link toc-link"><a
+                        href="#who-is-this-guide-for-section" class="side-column-text"
+                        id="who-is-this-guide-for-section-link-left">Who is this guide for?</a>
+                </div>
+                <div id="prerequisites-linklr" class="column-link toc-link"><a href="#prerequisites-section"
+                        class="side-column-text" id="prerequisites-section-link-left">Prerequisites</a></div>
+            </nav>
+
             <div class="side-column-labels">Sections:</div>
-            <p class="side-column-text">Introduction</p>
-            <p class="side-column-text">Prerequisites</p>
-            <p class="side-column-text">pluralize</p>
-            <p class="side-column-text">Challenge Overview</p>
-            <p class="side-column-text">Explanation</p>
-            <p class="side-column-text">Code walkthrough</p>
-            <p class="side-column-text">map</p>
-            <p class="side-column-text">forEach</p>
-            <p class="side-column-text">filterArray</p>
-            <p class="side-column-text">eitherFilter</p>
-            <p class="side-column-text">eitherCallback</p>
-            <p class="side-column-text">reduce</p>
-            <p class="side-column-text">intersection</p>
-            <p class="side-column-text">union</p>
-            <p class="side-column-text">objOfMatches</p>
-            <p class="side-column-text">arrToObj</p>
-            <p class="side-column-text">multiMap</p>
-            <p class="side-column-text">majority</p>
-            <p class="side-column-text">prioritize</p>
-            <p class="side-column-text">countBy</p>
-            <p class="side-column-text">groupBy</p>
-            <p class="side-column-text">goodKeys</p>
-            <p class="side-column-text">Conclusion</p>
+            <div class="sections-labels">
+                <p class="side-column-text"><span class="highlight"><a href="Introduction.html">Introduction</a></span></p>
+
+                <p class="side-column-text"><a href="First-class Functions.html">First-class Functions</a></p>
+                <p class="side-column-text"><a href="pluralize.html">pluralize</a></p>
+                <p class="side-column-text"><a href="map.html">map</a></p>
+                <p class="side-column-text"><a href="forEach.html">forEach</a></p>
+                <p class="side-column-text"><a href="filterArray.html">filterArray</a></p>
+                <p class="side-column-text"><a href="eitherFilter.html">eitherFilter</a></p>
+                <p class="side-column-text"><a href="eitherCallback.html">eitherCallback</a></p>
+                <p class="side-column-text"><a href="reduce.html">reduce</a></p>
+                <p class="side-column-text"><a href="intersection.html">intersection</a></p>
+                <p class="side-column-text"><a href="union.html">union</a></p>
+                <p class="side-column-text"><a href="objOfMatches.html">objOfMatches</a></p>
+                <p class="side-column-text"><a href="arrToObj.html">arrToObj</a></p>
+                <p class="side-column-text"><a href="multiMap.html">multiMap</a></p>
+                <p class="side-column-text"><a href="majority.html">majority</a></p>
+                <p class="side-column-text"><a href="prioritize.html">prioritize</a></p>
+                <p class="side-column-text"><a href="countBy.html">countBy</a></p>
+                <p class="side-column-text"><a href="groupBy.html">groupBy</a></p>
+                <p class="side-column-text"><a href="goodKeys.html">goodKeys</a></p>
+                <p class="side-column-text"><a href="Conclusion.html">Conclusion</a></p>
+            </div>
         </div>
+
+        <!-- middle column - main content -->
+
         <div class="middle-column">
             <h1>Introduction</h1>
             <div class="main-body-text">
-                <h2>What is this guide about?</h2>
-                A <strong>callback</strong> is a function that gets passed into another function as an argument,
-                and then invoked inside that outer function’s body. A <strong>higher-order function</strong> either
-                returns a function, or accepts a callback function as an argument. These two concepts
-                seem relatively simple on the surface, but they can be the source of a lot of confusion
-                for those who are new to programming. This guide is designed to cut through that confusion,
-                by providing clear explanations and easy-to-follow JavaScript code walkthroughs for each
-                problem in CSX’s Callbacks & Higher Order Functions module.
-                <br><br>
-                <h2>Who is this guide for?</h2>
-                CSX is an online platform and community where people learn the basics of JavaScript,
-                usually to prepare for entrance into the Codesmith coding bootcamp. Many people in this
-                community have shared that while they’ve understood the first few sections of CSX
-                material, the transition into the Callbacks and Higher Order Functions module has left
-                them feeling “discouraged”, “struggling”, “confused”, or “frustrated”. The difficulty spike is
-                very real, but these concepts can be broken down into just a few simple patterns. This
-                guide is not affiliated with Codesmith or CSX; it’s just here to show you that you can get
-                through these challenges with full understanding!
+                <section id="what-is-this-guide-about-section">
+                    <h2 id="what-is-this-guide-about">What is this guide about?</h2>
+                    A callback is a function that gets passed into another function as an argument, and then invoked
+                    inside that outer function’s body. A higher-order function either returns a function, or accepts a
+                    callback function as an argument. These two concepts seem relatively simple on the surface, but they
+                    can be the source of a lot of confusion for those who are new to programming. This guide is designed
+                    to help with that, by providing clear explanations and easy-to-follow JavaScript code walkthroughs
+                    for each problem in CSX’s Callbacks & Higher Order Functions module.
+                    <br><br>
+                </section>
+                <section id="who-is-this-guide-for-section">
+                    <h2 id="who-is-this-guide-for">Who is this guide for?</h2>
+                    CSX is an online platform and community where people learn the very basics of JavaScript, usually to
+                    prepare for entrance into the Codesmith coding bootcamp. Many people in this community have shared
+                    that while they’ve understood the first few sections of the CSX course, the transition into the
+                    callbacks module has left them “discouraged”, “struggling”, “confused”, or “frustrated”. The
+                    perceived difficulty spike is very real, so while this guide is not affiliated with Codesmith or
+                    CSX, it’s here to show you that you can get through these challenges with full understanding!
+                    <br><br>
+                </section>
+                <section id="prerequisites-section">
+                    <h2 id="prerequisites">Prerequisites</h2>
+                    To fully understand the material in this guide, you’ll need to have completed the following modules
+                    on CSX:
+                    Precourse - Part 1
+                    Precourse - Part 2
+                    Functions and Execution Context
+
+                    If you haven’t completed those, then at the very least you’ll need a solid grasp on the materials
+                    covered in those modules:
+                    Data types
+                    Functions
+                    Arrow Function Expressions
+                    Array basics: adding elements with push() and accessing elements with brackets
+                    Object basics: Adding and accessing properties with bracket notation and dot notation
+                    Loops: for, for...in, for...of
+
+                    Plenty of additional concepts and syntax will naturally come up as we progress through this guide,
+                    but they will all be explained in detail. However, those explanations will assume a working
+                    knowledge of all the aforementioned basics.
+
+                    Now, let's begin with the first section, where we'll lay the groundwork for the entire course by
+                    diving into the most important concept behind every challenge we'll solve: functions as first-class
+                    citizens.
+                    Work through the sections in order.
+                </section>
             </div>
-            <a href="/chapters/Prerequisites.html">Next: Prerequisites</a><br>
+            <div class="next-and-prev-pages">
+                <a href="First-class Functions.html">Next:
+                    First-class-functions</a><br>
+            </div>
+
         </div>
-        <div class="side-column right-column">
+
+        <!-- right column -->
+
+        <nav class="side-column right-column">
             <div class="side-column-labels">On this page:</div>
-            <p class="side-column-text">What is this guide about?</p>
-            <p class="side-column-text">Who is this guide for?</p>
-        </div>
+            <div id="what-is-this-guide-about-link-r" class="column-link toc-link"><a
+                    href="#what-is-this-guide-about-section" class="side-column-text"
+                    id="what-is-this-guide-about-section-link-right">What is this guide about?</a></div>
+            <div id="who-is-this-guide-for-link-r" class="column-link toc-link"><a href="#who-is-this-guide-for-section"
+                    class="side-column-text" id="who-is-this-guide-for-section-link-right">Who is this guide for?</a>
+            </div>
+            <div id="prerequisites-link-r" class="column-link toc-link"><a href="#prerequisites-section"
+                    class="side-column-text" id="prerequisites-section-link-right">Prerequisites</a></div>
+        </nav>
     </div>
+
+    <!-- footer -->
+
     <footer>
         2022. declarified.io
     </footer>
 
-    <script src="../scripts/main.js"></script>
+    <!-- scripts -->
 
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 
 </body>
 

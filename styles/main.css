@@ -318,7 +318,7 @@ input[type="search"]:focus {
     font-size: 13px;
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: var(--pastel-yellow) var(--pastel-peach);
+    scrollbar-color: var(--pastel-peach) var(--pastel-yellow);
     max-height: calc(100vh - var(--header-height) - calc(var(--column-padding-vertical) * 2));
     flex-grow: 1;
     position: -webkit-sticky;

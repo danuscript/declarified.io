@@ -148,7 +148,8 @@
 
             <div class="side-column-labels">Sections:</div>
             <div class="sections-labels">
-                <p class="side-column-text"><span class="highlight"><a href="Introduction.html">Introduction</a></span></p>
+                <p class="side-column-text"><span class="highlight"><a href="Introduction.html">Introduction</a></span>
+                </p>
 
                 <p class="side-column-text"><a href="First-class Functions.html">First-class Functions</a></p>
                 <p class="side-column-text"><a href="pluralize.html">pluralize</a></p>
@@ -181,10 +182,14 @@
                     <h2 id="what-is-this-guide-about">What is this guide about?</h2>
                     A callback is a function that gets passed into another function as an argument, and then invoked
                     inside that outer function’s body. A higher-order function either returns a function, or accepts a
-                    callback function as an argument. These two concepts seem relatively simple on the surface, but they
+                    callback as an argument. These two concepts seem relatively simple on the surface, but they
                     can be the source of a lot of confusion for those who are new to programming. This guide is designed
                     to help with that, by providing clear explanations and easy-to-follow JavaScript code walkthroughs
                     for each problem in CSX’s Callbacks & Higher Order Functions module.
+                    <br><br>
+                    This guide's table of contents can be found to the left; either currently visible or within the
+                    menu (☰) depending on your window size. You'll find the search bar and a link to the video
+                    version of this guide in the header, either currently visible or within the upper right menu (⋯).
                     <br><br>
                 </section>
                 <section id="who-is-this-guide-for-section">
@@ -200,24 +205,47 @@
                 <section id="prerequisites-section">
                     <h2 id="prerequisites">Prerequisites</h2>
                     To fully understand the material in this guide, you’ll need to have completed the following modules
-                    on CSX:
-                    Precourse - Part 1
-                    Precourse - Part 2
-                    Functions and Execution Context
-
+                    on CSX:<br>
+                    <ul>
+                        <li><a href="https://csx.codesmith.io/units/precourse">Precourse - Part 1</a><br></li>
+                        <li><a href="https://csx.codesmith.io/units/precourse-part-2">Precourse - Part 2</a><br></li>
+                        <li><a href="https://csx.codesmith.io/units/functions-execution-context">Functions and Execution
+                                Context</a><br></li>
+                    </ul>
+                    <br>
                     If you haven’t completed those, then at the very least you’ll need a solid grasp on the materials
-                    covered in those modules:
-                    Data types
-                    Functions
-                    Arrow Function Expressions
-                    Array basics: adding elements with push() and accessing elements with brackets
-                    Object basics: Adding and accessing properties with bracket notation and dot notation
-                    Loops: for, for...in, for...of
-
+                    covered in those modules:<br>
+                    <ul>
+                        <li><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#data_structures_and_types">Data
+                                types</a><br></li>
+                        <li><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions">Functions</a><br>
+                        </li>
+                        <li><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">Arrow
+                                Function Expressions</a><br></li>
+                        <li>Array basics: adding elements with <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push">push()</a>
+                            and accessing elements with <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#access_an_array_item_by_its_index">brackets</a><br>
+                        </li>
+                        <li>Object basics: <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors">Adding
+                                and accessing properties</a> with bracket notation and dot notation<br></li>
+                        <li>Loops: <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for">for</a>,
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in">for...in</a>,
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of">for...of</a><br>
+                        </li>
+                    </ul>
+                    <br>
                     Plenty of additional concepts and syntax will naturally come up as we progress through this guide,
                     but they will all be explained in detail. However, those explanations will assume a working
                     knowledge of all the aforementioned basics.
-
+                    <br>
                     Now, let's begin with the first section, where we'll lay the groundwork for the entire course by
                     diving into the most important concept behind every challenge we'll solve: functions as first-class
                     citizens.

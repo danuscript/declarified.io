@@ -316,12 +316,27 @@ input[type="search"]:focus {
     min-width: 200px;
     flex-shrink: 0;
     font-size: 13px;
-    overflow-y: scroll;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--pastel-yellow) var(--pastel-peach);
     max-height: calc(100vh - var(--header-height) - calc(var(--column-padding-vertical) * 2));
     flex-grow: 1;
     position: -webkit-sticky;
     position: sticky;
     top: var(--header-height);
+}
+
+.side-column::-webkit-scrollbar {
+    width: 11px;
+}
+
+.side-column::-webkit-scrollbar-track {
+    background: var(--pastel-yellow);
+}
+
+.side-column::-webkit-scrollbar-thumb {
+    background: var(--pastel-peach);
+    border-radius: 20px;
 }
 
 .side-column-labels {

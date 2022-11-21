@@ -27,7 +27,7 @@
     height: calc(100vh - 40px - 200px);
     min-height: 450px;
     max-width: 1700px;
-    max-height: 1080px;
+    max-height: 700px;
 }
 
 .banner-text {

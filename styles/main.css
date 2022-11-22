@@ -337,7 +337,7 @@ input[type="search"]:focus {
 }
 
 .side-column::-webkit-scrollbar {
-    width: 11px;
+    width: 8px;
 }
 
 .side-column::-webkit-scrollbar-track {

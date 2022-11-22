@@ -178,7 +178,9 @@
             <div class="main-body-text">
                 <section id="variables-can-be-functions-section">
                     <h2 id="variables-can-be-functions">Variables Can Be Functions</h2>
-                    JavaScript is one of many programming languages with <a href="https://en.wikipedia.org/wiki/First-class_function">first-class functions</a>, which means that
+                    JavaScript is one of many programming languages with <a
+                        href="https://en.wikipedia.org/wiki/First-class_function">first-class functions</a>, which means
+                    that
                     functions can be treated like any other variable. You can assign a function to be the value of a
                     variable, a function can be the return value of another function, and most importantly: you can pass
                     a function as an argument into another function. This is the central idea behind callbacks and
@@ -195,17 +197,21 @@ const bar = 'Hello, world!';</code></pre>
                     with the keyword <code>let</code> instead.
                     <pre><code>let foo = false;
 foo = true;</code></pre>
-                    Functions on the other hand are traditionally declared using the <code>function</code> keyword. There's no
+                    Functions on the other hand are traditionally declared using the <code>function</code> keyword.
+                    There's no
                     assignment operator (<code>=</code>) to be found.
                     <pre><code>function foo() {
   return 'Hello, world!';
 }</code></pre>
-                    In the code snippet above, <code>foo</code> is a variable just as it was in the prior examples. In this case, <code>foo</code>'s value is
-                    the function definition itself. To see what we mean, let's first <code>console.log</code> the value of a normal
+                    In the code snippet above, <code>foo</code> is a variable just as it was in the prior examples. In
+                    this case, <code>foo</code>'s value is
+                    the function definition itself. To see what we mean, let's first <code>console.log</code> the value
+                    of a normal
                     variable.
                     <pre><code>const foo = 42;
 console.log(<code>foo</code>); // -> 42</code></pre>
-                    We've initialized a variable with the label <code>foo</code> and assigned it a value of the number 42. When we
+                    We've initialized a variable with the label <code>foo</code> and assigned it a value of the number
+                    42. When we
                     <code>console.log</code> <code>foo</code>, we see that its value is 42, as expected.
                     <br><br>
                     Now, let's take our function example from before.
@@ -215,7 +221,8 @@ console.log(<code>foo</code>); // -> 42</code></pre>
                     If we <code>console.log</code> the evaluated result of invoking this function, the output will be
                     straightforward:
                     <pre><code>console.log(foo()); // -> 'Hello, world!'</code></pre>
-                    But instead of invoking this function like <code>foo()</code>, let's just log the value of <code>foo</code> itself.
+                    But instead of invoking this function like <code>foo()</code>, let's just log the value of
+                    <code>foo</code> itself.
                     <pre><code>console.log(foo);
 /*
 logs the following:
@@ -223,19 +230,25 @@ function foo() {
   return 'Hello, world!';
 }
 */</code></pre>
-                    When a function is declared with the <code>function</code> keyword, it creates a variable with the label you gave
+                    When a function is declared with the <code>function</code> keyword, it creates a variable with the
+                    label you gave
                     that function. The value of this label is the definition of the function you declared. So in our
-                    example, we've declared a function with the label <code>foo</code>. When we <code>console.log</code> the value of the variable
+                    example, we've declared a function with the label <code>foo</code>. When we <code>console.log</code>
+                    the value of the variable
                     <code>foo</code>, we see that this value is the definition of the function <code>foo</code>.
                     <br><br>
                     The exact output from this
-                    <code>console.log</code> may differ depending on your JavaScript runtime environment, but the process is the
+                    <code>console.log</code> may differ depending on your JavaScript runtime environment, but the
+                    process is the
                     same. For example, your output may not have any line breaks.
                     <pre><code>console.log(foo); // -> function foo() { return 'Hello, world!'; }</code></pre>
                     Alternatively, your output may even look like this:
                     <pre><code>console.log(foo); // -> [Function: foo]</code></pre>
-                    The outcome is the same: <code>foo</code> is a variable with the value of the function definition that we wrote.
-                    To see this definition, we could invoke the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/toString"><code>toString()</code> function method</a> on <code>foo</code> and log the result.
+                    The outcome is the same: <code>foo</code> is a variable with the value of the function definition
+                    that we wrote.
+                    To see this definition, we could invoke the <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/toString"><code>toString()</code>
+                        function method</a> on <code>foo</code> and log the result.
                     <pre><code>console.log(foo.toString());
 /*
 logs the following:

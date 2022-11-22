@@ -179,7 +179,7 @@
                 <section id="variables-can-be-functions-section">
                     <h2 id="variables-can-be-functions">Variables Can Be Functions</h2>
                     JavaScript is one of many programming languages with <a
-                        href="https://en.wikipedia.org/wiki/First-class_function">first-class functions</a>, which means
+                        href="https://en.wikipedia.org/wiki/First-class_function"><strong>first-class functions</strong></a>, which means
                     that
                     functions can be treated like any other variable. You can assign a function to be the value of a
                     variable, a function can be the return value of another function, and most importantly: you can pass
@@ -193,7 +193,8 @@
                     Your average variable in JavaScript can be declared with the keyword <code>const</code>.
                     <pre><code>const foo = 42;
 const bar = 'Hello, world!';</code></pre>
-                    If this variable needs to be reassigned at any point after declaration, then it should be declared
+                    If this variable needs to be reassigned or redeclared at any point after declaration, then it should
+                    be declared
                     with the keyword <code>let</code> instead.
                     <pre><code>let foo = false;
 foo = true;</code></pre>
@@ -212,7 +213,7 @@ foo = true;</code></pre>
 console.log(<code>foo</code>); // -> 42</code></pre>
                     We've initialized a variable with the label <code>foo</code> and assigned it a value of the number
                     42. When we
-                    <code>console.log</code> <code>foo</code>, we see that its value is 42, as expected.
+                    <code>console.log(foo)</code>, we see that its value is 42, as expected.
                     <br><br>
                     Now, let's take our function example from before.
                     <pre><code>function foo() {
@@ -257,10 +258,14 @@ logs the following:
 }'
 */</code></pre>
                     With functions being nothing more than special objects, they don't just have methods like
-                    <code>toString()</code>; they have other properties as well. Much like an array's <code>array.length</code> property, functions
-                    have properties such as <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name"><code>function.name</code></a>. Let's look at foo's name property.
+                    <code>toString()</code>; they have other properties as well. Much like an array's
+                    <code>array.length</code>, functions
+                    have properties such as <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name"><code>function.name</code></a>.
+                    Let's look at foo's name property.
                     <pre><code>console.log(foo.name); // -> 'foo'</code></pre>
-                    So, as each <code>console.log</code> has demonstrated, variables in JavaScript can take many forms. A variable
+                    So, as each <code>console.log</code> has demonstrated, variables in JavaScript can take many forms.
+                    A variable
                     could be a number, a variable could be a boolean, or a variable could be a function, among other
                     possibilities. You can pass functions around from one part of your code to another just as easily as
                     you can with any other variable. Keeping this in mind, callbacks and higher-order functions are much
@@ -269,7 +274,194 @@ logs the following:
                 </section>
                 <section id="function-syntax-section">
                     <h2 id="function-syntax">Function Syntax</h2>
-                    Coming soon!
+                    With the myriad of functions you're going to encounter in this guide and beyond, it's important to
+                    recognize the different forms that a function can take. So far, the functions we've looked at have
+                    used <strong>function declaration</strong> syntax. Here are some examples of functions declared this way:
+                    <pre><code>function divideByTwo(number) {
+  return number / 2;
+}
+console.log(divideByTwo(4)); // -> 2
+
+function concatWithS(string) {
+  return `${string}s`;
+}
+console.log(concatWithS('apple')); // -> 'apples'
+
+function addNumbers(number1, number2) {
+  return number1 + number2;
+}
+console.log(addNumbers(1, 2)); // -> 3</code></pre>
+                    The purpose of these functions and their return values are straightforward. We see from its function
+                    definition that <coce>divideByTwo</coce> has one parameter: <code>number</code>. Inside its function body, <code>divideByTwo</code> uses
+                    the division operator to return a value equivalent to <code>number</code> divided by two. Similarly, <code>concatWithS</code>
+                    and <code>addNumbers</code> use a template literal and the addition operator respectively in order to return
+                    their desired output values based off of the data passed in as input.
+                    <br><br>
+                    From these examples, we can derive a simple function declaration template for illustration purposes:
+                    <pre><code>// function declaration
+function name(parameter1, parameter2) {
+  return returnValue;
+}
+
+// function invocation
+name(argument1, argument2);</code></pre>
+                    All function declarations follow this format. First comes the <code>function</code> keyword, followed by the name
+                    of the function. The function's name is immediately followed by a list of its input parameters. The
+                    example in our template has two, but functions can be defined with zero, one, or any other number of
+                    parameters. After this comes the opening curly brace of the function's body. Between that and the
+                    closing curly brace, we can include a list of statements for our function to execute. In most cases,
+                    our list of statements will end with a return statement: the <code>return</code> keyword followed by any value
+                    that we wish to return. The return value will often be influenced by the value of the function's
+                    inputs.
+                    <br><br>
+                    Besides defining a function with a traditional declaration, the bottom of our template shows us an
+                    <strong>invocation</strong> of that function. A function is invoked when its name is used and followed by parens, in
+                    any context other than the initial function definition. Within those parens, we include any
+                    arguments we wish to pass into our function as input. These arguments are imported as the value of
+                    the function's parameters, and then the statements inside the function's body are executed.
+                    <br><br>
+                    In our
+                    example, <code>argument1</code> will be imported as the value of <code>parameter1</code>, and <code>argument2</code> will likewise be
+                    matched to <code>parameter2</code>. If these parameters were used inside the function body, then for that
+                    specific call those parameters would have the value of those arguments within that body. Once the
+                    function reaches and evaluates its return statement, the code stops running and the return value
+                    will be passed back to the initial context from which the function was called. So, <code>name(argument1, argument2)
+                    </code> has an evaluated result of <code>returnValue</code>.
+                    <br><br>
+                    Looking back at our functions <code>divideByTwo</code>, <code>concatWithS</code>, and <code>addNumbers</code> as well as their invocations,
+                    it's clear to see how the code runs through the lens of our function declaration template. However,
+                    what if the functions looked like this instead?
+                    <pre><code>const divideByTwo = function (number) {
+  return number / 2;
+};
+console.log(divideByTwo(4)); // -> 2
+
+const concatWitihS = function (string) {
+  return `${string}s`;
+};
+console.log(concatWithS('apple')); // -> 'apples'
+
+const addNumbers = function (number1, number2) {
+  return number1 + number2;
+};
+console.log(addNumbers(1, 2)); // -> 3</code></pre>
+
+                    These are not function declarations, these are <strong>function expressions</strong>. More specifically, in each of
+                    these examples we have declared a constant and assigned it the value of an anonymous function
+                    expression. It's important to distinguish between both sides of the assignment operator when it
+                    comes to initializing variables with function expressions as values. Much like the 42 in <code>const foo = 42</code>, the right side of this assignment in the examples above is just a value. Just like 42 by itself
+                    is not declaring anything, the function expression by itself is not declaring anything either,
+                    unlike a function declaration. That is why there is a declaration happening on the left, using the
+                    const keyword. Like any other value, a function expression doesn't always have to be assigned to a
+                    label using <code>const</code> or <code>let</code>. It can also be passed into a function as an argument, or returned from a
+                    function as a return value.
+                    <br><br>
+                    You may have also noticed the anonymity of these functions; there is no name following the <code>function</code>
+                    keyword. While function declarations do need a name, it's optional for function expressions. In the
+                    event that no name is used but the functixon is assigned to a variable, then the name can be inferred
+                    from the variable's label. So in the above example, <code>divideByTwo.name === 'divideByTwo'</code>, despite the
+                    function expression itself not having a name. However, functions used in function expressions need
+                    not always be anonymous, so this is also valid code:
+                    <pre><code>// named function expression assigned to constant
+const divideByTwo = function divider(number) {
+  return number / 2;
+};
+
+console.log(divideByTwo.name) // -> divider</code></pre>
+
+                    Let's use all of this knowledge to come up with a template for function expressions.
+                    <pre><code>// anonymous function expression assigned to constant
+const name = function (parameter1, parameter2) {
+  return returnValue;
+};
+
+// function invocation
+name(argument1, argument2);</code></pre>
+
+                    You will encounter function expressions, both anonymous and named, throughout this guide and beyond.
+                    You can think of them as being values that are functions; much like 42 is a value that is a number,
+                    and "Hello, world!" is a value that is a string. Like these other values, function expressions will
+                    often be assigned to variables using <code>let</code> or <code>const</code>, and they can be passed into other functions and
+                    returned from other functions as well.
+                    <br><br>
+                    Besides function declarations and traditional function expressions, there is another type of syntax
+                    you'll commonly see when it comes to writing functions: <strong>arrow function expressions</strong>. This is the most
+                    commonly used syntax that you'll see in this guide:
+                    <pre><code>const divideByTwo = (number) => number / 2;
+console.log(divideByTwo(4)); // -> 2
+
+const concatWithS = (string) => `${string}s`;
+console.log(concatWithS('apple')); // -> 'apples'
+
+const addNumbers = (number1, number2) => number1 + number2;
+console.log(addNumbers(1, 2)); // -> 3</code></pre>
+
+                    In each example above, we have declared a constant and assigned it the value of an arrow function
+                    expression. There seems to be quite a lot missing at first when compared to a traditional function
+                    expression: the function keyword, the curly braces, and the <code>return</code> keyword are nowhere to be found.
+                    However, it's important to note that an arrow function is just a special kind of anonymous function
+                    expression, with different syntax. The list of parameters is still there, and the return value
+                    is being returned implicitly.
+                    <br><br>
+                    All of the example functions we've been using so far have only had one statement within their body,
+                    as opposed to a longer list. If your function is like those examples and contains just a single
+                    expression, then arrow functions allow you to forgo the curly braces for the body, and leave out the
+                    <code>return</code> keyword. The expression after the arrow will be returned automatically; this is called
+                    <strong>implicit return</strong>.
+                    <pre><code>const foo = () => 'Hello, world!';
+
+console.log(foo()); // -> 'Hello, world!'
+// the string was returned implicitly</code></pre>
+
+                    However, many functions will have multiple statements to execute before a return is reached. If
+                    there is more than one statement within your function, then your arrow function will need curly
+                    braces to contain those statements. Similarly, if your code contains something that is not an
+                    expression that can be returned, such as an <code>if</code> statement or a variable declaration, then curly braces
+                    are needed for that situation as well. The return will not be implicit if curly braces are present,
+                    so the <code>return</code> keyword must be used if you wish to return a value, just like any other function with
+                    curly braces.
+                    <pre><code>// curly braces are needed for this function
+const game = (score) => {
+  if (score >= 100) return 'You won!';
+  else if (score >= 50) return Almost there...';
+  else return 'Try again next time!';
+};</code></pre>
+
+                    It's also worth noting that when an arrow function has exactly one parameter, the parens around that
+                    parameter can be omitted. For consistency, the code in this guide will always use parens for an
+                    arrow function's parameters, but it's important to know that both of the following functions work the
+                    same way:
+                    <pre><code>const affirmation = name => `Great work, ${name}!`;
+const affirmation2 = (name) => `You've got this, ${name}!`;</code></pre>
+
+                    With all of this in mind, let's look at a template for writing arrow function expressions. We'll
+                    also include the templates for the previous syntax as well, so you can easily see the differences
+                    and similarities.
+                    <pre><code>// arrow function expression assigned to a constant
+const name = (parameter1, parameter2) => returnValue;
+
+// anonymous function expression assigned to constant
+const name = function (parameter1, parameter2) {
+return returnValue;
+};
+
+// function declaration
+function name(parameter1, parameter2) {
+return returnValue;
+}
+
+// function invocation
+name(argument1, argument2);</code></pre>
+
+                    As you can see, these functions differ in appearance, but they're all invoked the same way. There
+                    are differences under the hood when it comes to functions written using these different methods; in
+                    some situations one kind of function is preferable over another, and in other situations certain
+                    kinds of functions should be avoided altogether. However, within the scope of this guide, all of the
+                    aforementioned function syntax will appear interchangeably, so make sure you're comfortable
+                    recognizing and writing function declarations, function expressions, and arrow function expressions.
+                    With this knowledge, you'll always be able to analyze your code and know exactly what each line is
+                    doing at any given time.
+
                     <br><br>
                 </section>
                 <section id="callback-structure-section">

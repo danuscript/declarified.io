@@ -92,14 +92,17 @@
         <div class="hamburger-menu-content">
             <nav class="hamburger-menu-column">
                 <div class="side-column-labels">On this page:</div>
-                <p><a href="#variables-can-be-functions-section" class="side-column-text hamburger-menu-link">Variables Can Be Funtions</a></p>
-                <p><a href="#function-syntax-section" class="side-column-text hamburger-menu-link">Function Syntax</a></p>
-                <p><a href="#callback-structure-section" class="side-column-text hamburger-menu-link">Callback Structure</a></p>
+                <p><a href="#variables-can-be-functions-section" class="side-column-text hamburger-menu-link">Variables
+                        Can Be Funtions</a></p>
+                <p><a href="#function-syntax-section" class="side-column-text hamburger-menu-link">Function Syntax</a>
+                </p>
+                <p><a href="#callback-structure-section" class="side-column-text hamburger-menu-link">Callback
+                        Structure</a></p>
             </nav>
             <div class="side-column-labels">Sections:</div>
             <span class="sections-labels">
                 <p class="side-column-text"><a href="Introduction.html">Introduction</a></p>
-                
+
                 <p class="side-column-text"><a href="First-class Functions.html">First-class Functions</a></p>
                 <p class="side-column-text"><a href="pluralize.html">pluralize</a></p>
                 <p class="side-column-text"><a href="map.html">map</a></p>
@@ -132,21 +135,21 @@
         <div class="side-column left-column">
             <nav class="combined-column">
                 <div class="side-column-labels">On this page:</div>
-                <div id="variables-can-be-functions-link-l" class="column-link toc-link"><a href="#variables-can-be-functions-section"
-                        class="side-column-text" id="variables-can-be-functions-section-link-left">Variables Can Be Functions</a></div>
-                <div id="function-syntax-link-l" class="column-link toc-link"><a
-                        href="#function-syntax-section" class="side-column-text"
-                        id="function-syntax-section-link-left">Function Syntax</a></div>
-                <div id="callback-structure-link-l" class="column-link toc-link"><a
-                        href="#callback-structure-section" class="side-column-text"
-                        id="callback-structure-section-link-left">Callback Structure</a></div>
+                <div id="variables-can-be-functions-link-l" class="column-link toc-link"><a
+                        href="#variables-can-be-functions-section" class="side-column-text"
+                        id="variables-can-be-functions-section-link-left">Variables Can Be Functions</a></div>
+                <div id="function-syntax-link-l" class="column-link toc-link"><a href="#function-syntax-section"
+                        class="side-column-text" id="function-syntax-section-link-left">Function Syntax</a></div>
+                <div id="callback-structure-link-l" class="column-link toc-link"><a href="#callback-structure-section"
+                        class="side-column-text" id="callback-structure-section-link-left">Callback Structure</a></div>
             </nav>
 
             <div class="side-column-labels">Sections:</div>
             <div class="sections-labels">
                 <p class="side-column-text"><a href="Introduction.html">Introduction</a></p>
-                
-                <p class="side-column-text"><span class="highlight"><a href="First-class Functions.html">First-class Functions</a></span></p>
+
+                <p class="side-column-text"><span class="highlight"><a href="First-class Functions.html">First-class
+                            Functions</a></span></p>
                 <p class="side-column-text"><a href="pluralize.html">pluralize</a></p>
                 <p class="side-column-text"><a href="map.html">map</a></p>
                 <p class="side-column-text"><a href="forEach.html">forEach</a></p>
@@ -175,7 +178,76 @@
             <div class="main-body-text">
                 <section id="variables-can-be-functions-section">
                     <h2 id="variables-can-be-functions">Variables Can Be Functions</h2>
-                    Coming soon!
+                    JavaScript is one of many programming languages with <a href="https://en.wikipedia.org/wiki/First-class_function">first-class functions</a>, which means that
+                    functions can be treated like any other variable. You can assign a function to be the value of a
+                    variable, a function can be the return value of another function, and most importantly: you can pass
+                    a function as an argument into another function. This is the central idea behind callbacks and
+                    higher-order functions.
+                    <br><br>
+                    It's not immediately obvious that functions in JavaScript are the same as other variables, since the
+                    traditional syntax for declaring a function can look a lot different from the syntax for declaring
+                    other variables.
+                    <br><br>
+                    Your average variable in JavaScript can be declared with the keyword <code>const</code>.
+                    <pre><code>const foo = 42;
+const bar = 'Hello, world!';</code></pre>
+                    If this variable needs to be reassigned at any point after declaration, then it should be declared
+                    with the keyword <code>let</code> instead.
+                    <pre><code>let foo = false;
+foo = true;</code></pre>
+                    Functions on the other hand are traditionally declared using the <code>function</code> keyword. There's no
+                    assignment operator (<code>=</code>) to be found.
+                    <pre><code>function foo() {
+  return 'Hello, world!';
+}</code></pre>
+                    In the code snippet above, <code>foo</code> is a variable just as it was in the prior examples. In this case, <code>foo</code>'s value is
+                    the function definition itself. To see what we mean, let's first <code>console.log</code> the value of a normal
+                    variable.
+                    <pre><code>const foo = 42;
+console.log(<code>foo</code>); // -> 42</code></pre>
+                    We've initialized a variable with the label <code>foo</code> and assigned it a value of the number 42. When we
+                    <code>console.log</code> <code>foo</code>, we see that its value is 42, as expected.
+                    <br><br>
+                    Now, let's take our function example from before.
+                    <pre><code>function foo() {
+  return 'Hello, world!';
+}</code></pre>
+                    If we <code>console.log</code> the evaluated result of invoking this function, the output will be
+                    straightforward:
+                    <pre><code>console.log(foo()); // -> 'Hello, world!'</code></pre>
+                    But instead of invoking this function like <code>foo()</code>, let's just log the value of <code>foo</code> itself.
+                    <pre><code>console.log(foo);
+/*
+logs the following:
+function foo() {
+  return 'Hello, world!';
+}
+*/</code></pre>
+                    When a function is declared with the <code>function</code> keyword, it creates a variable with the label you gave
+                    that function. The value of this label is the definition of the function you declared. So in our
+                    example, we've declared a function with the label <code>foo</code>. When we <code>console.log</code> the value of the variable
+                    <code>foo</code>, we see that this value is the definition of the function <code>foo</code>.
+                    <br><br>
+                    The exact output from this
+                    <code>console.log</code> may differ depending on your JavaScript runtime environment, but the process is the
+                    same. For example, your output may not have any line breaks.
+                    <pre><code>console.log(foo); // -> function foo() { return 'Hello, world!'; }</code></pre>
+                    Alternatively, your output may even look like this:
+                    <pre><code>console.log(foo); // -> [Function: foo]</code></pre>
+                    The outcome is the same: <code>foo</code> is a variable with the value of the function definition that we wrote.
+                    To see this definition, we could invoke the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/toString"><code>toString()</code> function method</a> on <code>foo</code> and log the result.
+                    <pre><code>console.log(foo.toString());
+/*
+logs the following:
+'function foo() {
+  return 'Hello, world!';
+}'
+*/</code></pre>
+                    So, as the console.logs have demonstrated, variables in JavaScript can take many forms. A variable
+                    could be a number, a variable could be a boolean, or a variable could be a function, among other
+                    possibilities. You can pass functions around from one part of your code to another just as easily as
+                    you can with any other variable. Keeping this in mind, callbacks and higher-order functions are much
+                    easier to reason about.
                     <br><br>
                 </section>
                 <section id="function-syntax-section">
@@ -199,8 +271,9 @@
 
         <nav class="side-column right-column">
             <div class="side-column-labels">On this page:</div>
-            <div id="variables-can-be-functions-link-r" class="column-link toc-link"><a href="#variables-can-be-functions-section"
-                    class="side-column-text" id="variables-can-be-functions-section-link-right">Variables Can Be Functions</a></div>
+            <div id="variables-can-be-functions-link-r" class="column-link toc-link"><a
+                    href="#variables-can-be-functions-section" class="side-column-text"
+                    id="variables-can-be-functions-section-link-right">Variables Can Be Functions</a></div>
             <div id="function-syntax-link-r" class="column-link toc-link"><a href="#function-syntax-section"
                     class="side-column-text" id="function-syntax-section-link-right">Function Syntax</a></div>
             <div id="callback-structure-link-r" class="column-link toc-link"><a href="#callback-structure-section"

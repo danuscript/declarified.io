@@ -205,7 +205,7 @@ foo = true;</code></pre>
 }</code></pre>
                     In the code snippet above, <code>foo</code> is a variable just as it was in the prior examples. In
                     this case, <code>foo</code>'s value is
-                    the function definition itself. To see what we mean, let's first <code>console.log</code> the value
+                    the function object itself. To see what we mean, let's first <code>console.log</code> the value
                     of a normal
                     variable.
                     <pre><code>const foo = 42;
@@ -232,7 +232,7 @@ function foo() {
 */</code></pre>
                     When a function is declared with the <code>function</code> keyword, it creates a variable with the
                     label you gave
-                    that function. The value of this label is the function object you declared. So in our
+                    that function. The value assigned to this label is the function object you declared. So in our
                     example, we've declared a function with the label <code>foo</code>. When we <code>console.log</code>
                     the value of the variable
                     <code>foo</code>, we see that this value is the function object <code>foo</code>.
@@ -256,7 +256,11 @@ logs the following:
   return 'Hello, world!';
 }'
 */</code></pre>
-                    So, as the console.logs have demonstrated, variables in JavaScript can take many forms. A variable
+                    With functions being nothing more than special objects, they don't just have methods like
+                    <code>toString()</code>; they have other properties as well. Much like an array's <code>array.length</code> property, functions
+                    have properties such as <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name"><code>function.name</code></a>. Let's look at foo's name property.
+                    <pre><code>console.log(foo.name); // -> 'foo'</code></pre>
+                    So, as each <code>console.log</code> has demonstrated, variables in JavaScript can take many forms. A variable
                     could be a number, a variable could be a boolean, or a variable could be a function, among other
                     possibilities. You can pass functions around from one part of your code to another just as easily as
                     you can with any other variable. Keeping this in mind, callbacks and higher-order functions are much

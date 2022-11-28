@@ -179,7 +179,8 @@
                 <section id="variables-can-be-functions-section">
                     <h2 id="variables-can-be-functions">Variables Can Be Functions</h2>
                     JavaScript is one of many programming languages with <a
-                        href="https://en.wikipedia.org/wiki/First-class_function"><strong>first-class functions</strong></a>, which means
+                        href="https://en.wikipedia.org/wiki/First-class_function"><strong>first-class
+                            functions</strong></a>, which means
                     that
                     functions can be treated like any other variable. You can assign a function to be the value of a
                     variable, a function can be the return value of another function, and most importantly: you can pass
@@ -276,7 +277,8 @@ logs the following:
                     <h2 id="function-syntax">Function Syntax</h2>
                     With the myriad of functions you're going to encounter in this guide and beyond, it's important to
                     recognize the different forms that a function can take. So far, the functions we've looked at have
-                    used <strong>function declaration</strong> syntax. Here are some examples of functions declared this way:
+                    used <strong>function declaration</strong> syntax. Here are some examples of functions declared this
+                    way:
                     <pre><code>function divideByTwo(number) {
   return number / 2;
 }
@@ -292,9 +294,12 @@ function addNumbers(number1, number2) {
 }
 console.log(addNumbers(1, 2)); // -> 3</code></pre>
                     The purpose of these functions and their return values are straightforward. We see from its function
-                    definition that <code>divideByTwo</code> has one parameter: <code>number</code>. Inside its function body, <code>divideByTwo</code> uses
-                    the division operator to return a value equivalent to <code>number</code> divided by two. Similarly, <code>concatWithS</code>
-                    and <code>addNumbers</code> use a template literal and the addition operator respectively in order to return
+                    definition that <code>divideByTwo</code> has one parameter: <code>number</code>. Inside its function
+                    body, <code>divideByTwo</code> uses
+                    the division operator to return a value equivalent to <code>number</code> divided by two. Similarly,
+                    <code>concatWithS</code>
+                    and <code>addNumbers</code> use a template literal and the addition operator respectively in order
+                    to return
                     their desired output values based off of the data passed in as input.
                     <br><br>
                     From these examples, we can derive a simple function declaration template for illustration purposes:
@@ -305,30 +310,36 @@ function name(parameter1, parameter2) {
 
 // function invocation
 name(argument1, argument2);</code></pre>
-                    All function declarations follow this format. First comes the <code>function</code> keyword, followed by the name
+                    All function declarations follow this format. First comes the <code>function</code> keyword,
+                    followed by the name
                     of the function. The function's name is immediately followed by a list of its input parameters. The
                     example in our template has two, but functions can be defined with zero, one, or any other number of
                     parameters. After this comes the opening curly brace of the function's body. Between that and the
                     closing curly brace, we can include a list of statements for our function to execute. In most cases,
-                    our list of statements will end with a return statement: the <code>return</code> keyword followed by any value
+                    our list of statements will end with a return statement: the <code>return</code> keyword followed by
+                    any value
                     that we wish to return. The return value will often be influenced by the value of the function's
                     inputs.
                     <br><br>
                     Besides defining a function with a traditional declaration, the bottom of our template shows us an
-                    <strong>invocation</strong> of that function. A function is invoked when its name is used and followed by parens, in
+                    <strong>invocation</strong> of that function. A function is invoked when its name is used and
+                    followed by parens, in
                     any context other than the initial function definition. Within those parens, we include any
                     arguments we wish to pass into our function as input. These arguments are imported as the value of
                     the function's parameters, and then the statements inside the function's body are executed.
                     <br><br>
                     In our
-                    example, <code>argument1</code> will be imported as the value of <code>parameter1</code>, and <code>argument2</code> will likewise be
-                    matched to <code>parameter2</code>. If these parameters were used inside the function body, then for that
+                    example, <code>argument1</code> will be imported as the value of <code>parameter1</code>, and
+                    <code>argument2</code> will likewise be
+                    matched to <code>parameter2</code>. If these parameters were used inside the function body, then for
+                    that
                     specific call those parameters would have the value of those arguments within that body. Once the
                     function reaches and evaluates its return statement, the code stops running and the return value
                     will be passed back to the initial context from which the function was called. So, <code>name(argument1, argument2)
                     </code> has an evaluated result of <code>returnValue</code>.
                     <br><br>
-                    Looking back at our functions <code>divideByTwo</code>, <code>concatWithS</code>, and <code>addNumbers</code> as well as their invocations,
+                    Looking back at our functions <code>divideByTwo</code>, <code>concatWithS</code>, and
+                    <code>addNumbers</code> as well as their invocations,
                     it's clear to see how the code runs through the lens of our function declaration template. However,
                     what if the functions looked like this instead?
                     <pre><code>const divideByTwo = function (number) {
@@ -346,20 +357,27 @@ const addNumbers = function (number1, number2) {
 };
 console.log(addNumbers(1, 2)); // -> 3</code></pre>
 
-                    These are not function declarations, these are <strong>function expressions</strong>. More specifically, in each of
+                    These are not function declarations, these are <strong>function expressions</strong>. More
+                    specifically, in each of
                     these examples we have declared a constant and assigned it the value of an anonymous function
                     expression. It's important to distinguish between both sides of the assignment operator when it
-                    comes to initializing variables with function expressions as values. Much like the 42 in <code>const foo = 42</code>, the right side of this assignment in the examples above is just a value. Just like 42 by itself
+                    comes to initializing variables with function expressions as values. Much like the 42 in
+                    <code>const foo = 42</code>, the right side of this assignment in the examples above is just a
+                    value. Just like 42 by itself
                     is not declaring anything, the function expression by itself is not declaring anything either,
                     unlike a function declaration. That is why there is a declaration happening on the left, using the
                     const keyword. Like any other value, a function expression doesn't always have to be assigned to a
-                    label using <code>const</code> or <code>let</code>. It can also be passed into a function as an argument, or returned from a
+                    label using <code>const</code> or <code>let</code>. It can also be passed into a function as an
+                    argument, or returned from a
                     function as a return value.
                     <br><br>
-                    You may have also noticed the anonymity of these functions; there is no name following the <code>function</code>
+                    You may have also noticed the anonymity of these functions; there is no name following the
+                    <code>function</code>
                     keyword. While function declarations do need a name, it's optional for function expressions. In the
-                    event that no name is used but the functixon is assigned to a variable, then the name can be inferred
-                    from the variable's label. So in the above example, <code>divideByTwo.name === 'divideByTwo'</code>, despite the
+                    event that no name is used but the functixon is assigned to a variable, then the name can be
+                    inferred
+                    from the variable's label. So in the above example, <code>divideByTwo.name === 'divideByTwo'</code>,
+                    despite the
                     function expression itself not having a name. However, functions used in function expressions need
                     not always be anonymous, so this is also valid code:
                     <pre><code>// named function expression assigned to constant
@@ -381,11 +399,13 @@ name(argument1, argument2);</code></pre>
                     You will encounter function expressions, both anonymous and named, throughout this guide and beyond.
                     You can think of them as being values that are functions; much like 42 is a value that is a number,
                     and "Hello, world!" is a value that is a string. Like these other values, function expressions will
-                    often be assigned to variables using <code>let</code> or <code>const</code>, and they can be passed into other functions and
+                    often be assigned to variables using <code>let</code> or <code>const</code>, and they can be passed
+                    into other functions and
                     returned from other functions as well.
                     <br><br>
                     Besides function declarations and traditional function expressions, there is another type of syntax
-                    you'll commonly see when it comes to writing functions: <strong>arrow function expressions</strong>. This is the most
+                    you'll commonly see when it comes to writing functions: <strong>arrow function expressions</strong>.
+                    This is the most
                     commonly used syntax that you'll see in this guide:
                     <pre><code>const divideByTwo = (number) => number / 2;
 console.log(divideByTwo(4)); // -> 2
@@ -398,7 +418,8 @@ console.log(addNumbers(1, 2)); // -> 3</code></pre>
 
                     In each example above, we have declared a constant and assigned it the value of an arrow function
                     expression. There seems to be quite a lot missing at first when compared to a traditional function
-                    expression: the function keyword, the curly braces, and the <code>return</code> keyword are nowhere to be found.
+                    expression: the function keyword, the curly braces, and the <code>return</code> keyword are nowhere
+                    to be found.
                     However, it's important to note that an arrow function is just a special kind of anonymous function
                     expression, with different syntax. The list of parameters is still there, and the return value
                     is being returned implicitly.
@@ -406,7 +427,8 @@ console.log(addNumbers(1, 2)); // -> 3</code></pre>
                     All of the example functions we've been using so far have only had one statement within their body,
                     as opposed to a longer list. If your function is like those examples and contains just a single
                     expression, then arrow functions allow you to forgo the curly braces for the body, and leave out the
-                    <code>return</code> keyword. The expression after the arrow will be returned automatically; this is called
+                    <code>return</code> keyword. The expression after the arrow will be returned automatically; this is
+                    called
                     <strong>implicit return</strong>.
                     <pre><code>const foo = () => 'Hello, world!';
 
@@ -416,9 +438,11 @@ console.log(foo()); // -> 'Hello, world!'
                     However, many functions will have multiple statements to execute before a return is reached. If
                     there is more than one statement within your function, then your arrow function will need curly
                     braces to contain those statements. Similarly, if your code contains something that is not an
-                    expression that can be returned, such as an <code>if</code> statement or a variable declaration, then curly braces
+                    expression that can be returned, such as an <code>if</code> statement or a variable declaration,
+                    then curly braces
                     are needed for that situation as well. The return will not be implicit if curly braces are present,
-                    so the <code>return</code> keyword must be used if you wish to return a value, just like any other function with
+                    so the <code>return</code> keyword must be used if you wish to return a value, just like any other
+                    function with
                     curly braces.
                     <pre><code>// curly braces are needed for this function 
 const game = (score) => {
@@ -429,7 +453,8 @@ const game = (score) => {
 
                     It's also worth noting that when an arrow function has exactly one parameter, the parens around that
                     parameter can be omitted. For consistency, the code in this guide will always use parens for an
-                    arrow function's parameters, but it's important to know that both of the following functions work the
+                    arrow function's parameters, but it's important to know that both of the following functions work
+                    the
                     same way:
                     <pre><code>const affirmation = name => `Great work, ${name}!`;
 const affirmation2 = (name) => `You've got this, ${name}!`;</code></pre>
@@ -466,7 +491,186 @@ name(argument1, argument2);</code></pre>
                 </section>
                 <section id="callback-structure-section">
                     <h2 id="callback-structure">Callback Structure</h2>
-                    Coming soon!
+                    Now that we're familiar with the nature of functions and the various syntax that we'll encounter,
+                    let's look at how this all fits into this guide's main focus: callbacks and higher-order functions.
+                    We know that a variable can be a function, and that variables can be passed into functions as
+                    arguments. So what happens when you pass a function into a different function as an argument?
+
+                    In order to see this in action, let's start with an example problem that calls for a <strong>higher-order function:</strong>
+                    <blockquote>
+                        Write a function called <code>thrice</code> that accepts two arguments: a callback function, and a value.
+                        Your
+                        <code>thrice</code> function should invoke the callback three times, following this logic:
+                        <br><br>
+                        On the first invocation, <code>thrice</code> should pass its input value into the callback as an argument.
+                        <br><br>
+                        On the second invocation of the callback, <code>thrice</code> should pass in the result of the first
+                        invocation.
+                        <br><br>
+                        On the third invocation, <code>thrice</code> should pass in the result of the second invocation.
+                        <br><br>
+                        Finally, after these three function calls, <code>thrice</code> should return the result of the third
+                        invocation.
+                        <br><br>
+                        Example 1:<br>
+                        <strong>Input</strong><br>
+                        <code>callback = (number) => number / 2</code><br>
+                        <code>value = 8</code><br>
+                        <strong>Output</strong><br>
+                        <code>thrice(callback, value) === 1</code>
+                        <br><br>
+                        Example 2:<br>
+                        <strong>Input</strong><br>
+                        <code>callback = (string) => `${string}s`</code><br>
+                        <code>value = 'cat'</code><br>
+                        <strong>Output</strong><br>
+                        <code>thrice(callback, value) === 'catsss'</code>
+                    </blockquote>
+                    This challenge's prompt is asking us to implement a function that simulates running a callback three
+                    times. Using our example functions from earlier, passing in <code>divideByTwo</code> and the number 8 should give
+                    us a result of 1, which is what happens if you divide 8 by 2 three times. Similarly, passing in
+                    <code>concatWithS</code> and the string 'cat' should give us 'catsss', since that's what happens when you add an
+                    's' to 'cat' three times. Let's start by writing out our function body:
+                    <pre><code>const thrice = (callback, value) => {
+  // TODO
+};</code></pre>
+
+                    We now have a function that accepts the parameters specified in the prompt. Next, let's implement
+                    the core idea: repeating an action three times. The most straightforward method for this is a simple
+                    for loop.
+                    <pre><code>const thrice = (callback, value) => {
+  for (let i = 0; i &lt; 3; i += 1) {
+    // TODO
+  }
+};</code></pre>
+
+                    Now, let's tackle the trickier part. On each iteration, we're going to invoke the callback. The
+                    argument that's passed into this callback should first have a value equal to the one passed into
+                    <code>thrice</code>. Before our loop starts, let's initialize a variable with this value, called <code>result</code>. Then,
+                    within the loop, we'll pass that variable into the callback, and save the output of that invocation
+                    to a new variable called <code>newResult</code>.
+                    <pre><code>const thrice = (callback, value) => {
+  let result = value;
+
+  for (let i = 0; i &lt; 3; i += 1) {
+    const newResult = callback(result);
+  }
+};</code></pre>
+
+                    Now we have a loop that invokes the callback, passing in the <code>result</code> variable each time. This works
+                    on our first iteration, but we know that on the next iteration, the value of <code>newResult</code> should be
+                    passed into our callback. So, let's just give that value to our <code>result</code> variable before moving to
+                    that second iteration:
+                    <pre><code>const thrice = (callback, value) => {
+  let result = value;
+
+  for (let i = 0; i &lt; 3; i += 1) {
+    const newResult = callback(result);
+    result = newResult;
+  }
+};</code></pre>
+
+                    Now, in the second iteration of our loop, <code>result</code> has the value of the output of the first callback
+                    invocation. We pass this value into the callback, and save it to <code>newResult</code>. We then use the value of
+                    <code>newResult</code> to overwrite <code>result</code> once again, before moving to the third and final iteration.
+                    <br><br>
+                    On the last iteration, <code>result</code> has the value of the output of the second invocation, so we pass this
+                    into the callback and save it to <code>newResult</code> once again. One final time, we overwrite <code>result</code> with the
+                    value of <code>newResult</code>, and then the loop concludes.
+                    <br><br>
+                    Now, outside of the loop, <code>result</code> is left with the value of the third invocation of the callback.
+                    Referring back to our prompt, this is the value we're supposed to return. So, as a final step, let's
+                    add that return statement and then run some test cases.
+                    <pre><code>const thrice = (callback, value) => {
+  let result = value;
+
+  for (let i = 0; i &lt; 3; i += 1) {
+    const newResult = callback(result);
+    result = newResult;
+  }
+
+  return result;
+};
+
+const divideByTwo = (number) => number / 2;
+const concatWithS = (string) => `${string}s`;
+
+console.log(thrice(divideByTwo, 8)); // -> 1
+console.log(thrice(concatWithS, 'cat')); // -> catsss</code></pre>
+
+                    We've now finished implementing our function. A higher-order function satisfies at least one of two
+                    criteria: accepting a function as an argument, or returning a function as its return value. Like
+                    most of the solutions in this guide, <code>thrice</code> fits that first criteria.
+                    <br><br>
+                    Now that we have a higher-order function, let's take a closer look at callback functions by
+                    examining the test cases and the way <code>thrice</code> is invoked.
+                    <br><br>
+                    In the code snippet above, we have defined our previously-discussed <code>divideByTwo</code> and <code>concatWithS</code>
+                    functions. On each invocation of <code>thrice</code>, we pass one of those functions in as the first argument.
+                    This means that within the context of those invocations, <code>divideByTwo</code> and <code>concatWithS</code> are callback
+                    functions, meaning they have been passed into another function as an argument and then invoked
+                    inside that function.
+                    <br><br>
+                    One thing that's important to note is that we invoke <code>thrice</code>, the callback we pass in is a function</code>
+                    object, not a function invocation. There are no parens after the callback's label, because we are
+                    not invoking it; we want to pass in the function itself as opposed to the evaluated result of
+                    invoking that function.
+                    <br><br>
+                    Let's walk through exactly how our code runs, using the first test case as an example. First, <code>thrice</code>
+                    is invoked. <code>divideByTwo</code> is imported as the value of the parameter <code>callback</code>, and 8 is imported as the
+                    value of the parameter <code>value</code>. We then initialize our <code>result</code> variable with <code>value</code>, and enter our <code>for</code>
+                    loop. Within this <code>for</code> loop, we invoke <code>callback</code>. This means that we are invoking the function object
+                    that was passed in, using <code>result</code> as the argument.
+                    <br><br>
+                    This next part is the key to understanding higher-order functions: whenever a function is invoked, a
+                    new execution context is opened. Look at the line as a whole:
+                    <pre><code>const newResult = callback(result);</code></pre>
+
+                    Before we can actually assign a value to <code>newResult</code>, we have to find the value to assign, by
+                    evaluating <code>callback(result)</code>. This means that JavaScript will pause execution of the current function
+                    thrice, and begin executing <code>callback(result)</code>, which we know to be <code>divByTwo(8)</code>.
+                    <br><br>
+                    We can now refer to the definition of the currently executing function, <code>divByTwo</code>, where we see that
+                    8 is imported as the value of the argument <code>number</code>. We evaluate 8 divided by two, and this result of
+                    4 is implicitly returned. When the <code>return</code> keyword is reached in a function, it returns to the
+                    previous execution context, in the exact site that the function was called. The value after the
+                    <code>return</code> keyword is brought back to that previous context, where it can then be used. So, <code>divByTwo(8)</code>
+                    has returned 4 to the previous context, where it is used as the evaluated result of the invocation
+                    of <code>divByTwo(8)</code>. It is now equivalent to this:
+                    <pre><code>const newResult = 8;</code></pre>
+
+                    From there, this process is repeated; two more calls to <code>divByTwo</code> are made, returning the values of 2
+                    and 1 respectively. And each time, JavaScript pauses the execution of <code>thrice</code>, opens a new execution
+                    context to evaluate the function call <code>divByTwo(result)</code>, and then returns that evaluated result to
+                    the previous context's call site in <code>thrice</code>.
+                    <br><br>
+                    This process of opening a new context happens every single time a function is invoked, whether
+                    that's within the global context of our test case invoking <code>thrice</code>, or within the local context of
+                    <code>thrice</code> invoking <code>divByTwo</code>. As we look at more and more higher-order functions and callbacks, it helps
+                    to be able to follow the thread of execution from one context to another.
+                    <br><br>
+                    One final note: function expressions will often be passed directly into a function as a callback
+                    argument, without even being saved to a variable first. For example, the following invocations of
+                    thrice would also work:
+                    <pre><code>console.log(thrice((number) => number / 2, 8)); // -> 1
+
+console.log(thrice(function(string) {
+  return `${string}s`
+}, 'cat')); // -> catsss</code></pre>
+
+                    In the first example above, we have passed an arrow function expression into <code>thrice</code>. That's the
+                    function object that will be imported as the value as the first parameter. The second example may be
+                    a little bit less obvious since it spans multiple lines, but we've still just passed an anonymous
+                    function expression into <code>thrice</code> as the first argument. The entire function across those three lines
+                    is <code>thrice</code>'s first argument, which is why it's followed by a comma separating it from the second
+                    argument, 'cat'. Recognizing when a function has been passed in as a callback even if it spans
+                    multiple lines is crucial, as this will happen often with higher-order functions.
+                    <br><br>
+                    This concludes the "First-class Functions" section, which is the basis of understanding all the
+                    following challenges in this guide. If you know that functions are just like any other value in
+                    JavaScript, if you can identify the syntax patterns that functions can take, and if you're able to
+                    effectively follow the thread of execution in a higher-order function like <code>thrice</code>, then you'll be
+                    able to fully grasp every single challenge in the CSX Callbacks and Higher Order functions module.
                 </section>
             </div>
             <div class="next-and-prev-pages">
